@@ -5,23 +5,8 @@ pub fn sum_even(values: &[i64]) -> i64 {
     values.iter().filter(|x| *x % 2 == 0 ).sum()
 }
 
-/// Подсчёт ненулевых байтов. Буфер намеренно не освобождается,
-/// что приведёт к утечке памяти (Valgrind это покажет).
 pub fn leak_buffer(input: &[u8]) -> usize {
-    let boxed = input.to_vec().into_boxed_slice();
-    let len = input.len();
-    let raw = Box::into_raw(boxed) as *mut u8;
-
-    let mut count = 0;
-    unsafe {
-        for i in 0..len {
-            if *raw.add(i) != 0_u8 {
-                count += 1;
-            }
-        }
-        // утечка: не вызываем Box::from_raw(raw);
-    }
-    count
+    input.iter().filter(|x| **x != 0).count()
 }
 
 /// Небрежная нормализация строки: удаляем пробелы и приводим к нижнему регистру,
@@ -84,5 +69,20 @@ mod tests {
         assert!((average_positive(&[])).abs() < f64::EPSILON);
         // проверка на массив нулей
         assert!((average_positive(&[0; 3])).abs() < f64::EPSILON);
+    }
+
+    #[test]
+    fn regression_leak_buffer_correct_count() {
+        // Обычный случай
+        assert_eq!(leak_buffer(&[0, 1, 0, 2, 3]), 3);
+        // Все нули
+        assert_eq!(leak_buffer(&[0, 0, 0]), 0);
+        // Пустой вход
+        assert_eq!(leak_buffer(&[]), 0);
+        // Все ненулевые
+        assert_eq!(leak_buffer(&[1, 2, 3]), 3);
+        // Большой буфер (раньше утечка была пропорциональна размеру)
+        let big = vec![1u8; 10_000];
+        assert_eq!(leak_buffer(&big), 10_000);
     }
 }
