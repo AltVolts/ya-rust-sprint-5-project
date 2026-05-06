@@ -30,14 +30,18 @@ pub fn normalize(input: &str) -> String {
     input.replace(' ', "").to_lowercase()
 }
 
-/// Логическая ошибка: усредняет по всем элементам, хотя требуется учитывать
-/// только положительные. Деление на длину среза даёт неверный результат.
 pub fn average_positive(values: &[i64]) -> f64 {
-    let sum: i64 = values.iter().sum();
-    if values.is_empty() {
-        return 0.0;
-    }
-    sum as f64 / values.len() as f64
+  let (sum, count) = values
+    .iter()
+    .filter(|&&x| x > 0)
+    .fold((0i64, 0usize), |(sum, count), &x| {
+        (sum + x, count + 1)
+    });
+  if count == 0 {
+      0.0
+  } else {
+      sum as f64 / count as f64
+  }
 }
 
 /// Use-after-free: возвращает значение после освобождения бокса.
@@ -71,5 +75,14 @@ mod tests {
         let result = sum_even(&data);
         assert_eq!(result, 0);
     }
-    
+
+    #[test]
+    fn regression_average_positive_positive_absence() {
+        // проверка на отсутсвие положительных чисел
+        assert!((average_positive(&[-1, -2, -3])).abs() < f64::EPSILON);
+        // проверка на пустой массив
+        assert!((average_positive(&[])).abs() < f64::EPSILON);
+        // проверка на массив нулей
+        assert!((average_positive(&[0; 3])).abs() < f64::EPSILON);
+    }
 }
