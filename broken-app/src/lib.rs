@@ -1,20 +1,8 @@
 pub mod algo;
 pub mod concurrency;
 
-/// Сумма чётных значений.
-/// Здесь намеренно используется `get_unchecked` с off-by-one,
-/// из-за чего возникает UB при доступе за пределы среза.
 pub fn sum_even(values: &[i64]) -> i64 {
-    let mut acc = 0;
-    unsafe {
-        for idx in 0..=values.len() {
-            let v = *values.get_unchecked(idx);
-            if v % 2 == 0 {
-                acc += v;
-            }
-        }
-    }
-    acc
+    values.iter().filter(|x| *x % 2 == 0 ).sum()
 }
 
 /// Подсчёт ненулевых байтов. Буфер намеренно не освобождается,
@@ -60,4 +48,28 @@ pub unsafe fn use_after_free() -> i32 {
     let val = *raw;
     drop(Box::from_raw(raw));
     val + *raw
+}
+
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    /// Регрессионный тест: раньше был выход за границу при любом вызове
+    #[test]
+    fn regression_off_by_one_no_panic() {
+        let data = [1, 2, 3];
+        let result = sum_even(&data);
+        assert_eq!(result, 2); // 2 — единственное чётное
+    }
+
+    /// Дополнительно: проверяем пустой срез — граница len=0,
+    /// и цикл `0..=0` тоже выходил за границу
+    #[test]
+    fn regression_empty_slice() {
+        let data: [i64; 0] = [];
+        let result = sum_even(&data);
+        assert_eq!(result, 0);
+    }
+    
 }
