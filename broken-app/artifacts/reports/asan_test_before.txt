@@ -1,0 +1,88 @@
+warning[E0133]: dereference of raw pointer is unsafe and requires unsafe block
+  --> broken-app/src/lib.rs:52:15
+   |
+52 |     let val = *raw;
+   |               ^^^^ dereference of raw pointer
+   |
+   = note: raw pointers may be null, dangling or unaligned; they can violate aliasing rules and cause data races: all of these are undefined behavior
+note: an unsafe function restricts its caller, but its body is safe by default
+  --> broken-app/src/lib.rs:49:1
+   |
+49 | pub unsafe fn use_after_free() -> i32 {
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   = note: for more information, see <https://doc.rust-lang.org/edition-guide/rust-2024/unsafe-op-in-unsafe-fn.html>
+   = note: `#[warn(unsafe_op_in_unsafe_fn)]` (part of `#[warn(rust_2024_compatibility)]`) on by default
+
+warning[E0133]: call to unsafe function `std::boxed::Box::<T>::from_raw` is unsafe and requires unsafe block
+  --> broken-app/src/lib.rs:53:10
+   |
+53 |     drop(Box::from_raw(raw));
+   |          ^^^^^^^^^^^^^^^^^^ call to unsafe function
+   |
+   = note: consult the function's documentation for information on how to avoid undefined behavior
+   = note: for more information, see <https://doc.rust-lang.org/edition-guide/rust-2024/unsafe-op-in-unsafe-fn.html>
+
+warning[E0133]: dereference of raw pointer is unsafe and requires unsafe block
+  --> broken-app/src/lib.rs:54:11
+   |
+54 |     val + *raw
+   |           ^^^^ dereference of raw pointer
+   |
+   = note: raw pointers may be null, dangling or unaligned; they can violate aliasing rules and cause data races: all of these are undefined behavior
+   = note: for more information, see <https://doc.rust-lang.org/edition-guide/rust-2024/unsafe-op-in-unsafe-fn.html>
+
+For more information about this error, try `rustc --explain E0133`.
+warning: `broken-app` (lib) generated 3 warnings (run `cargo fix --lib -p broken-app` to apply 1 suggestion)
+
+warning: `broken-app` (lib test) generated 3 warnings (3 duplicates)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 10.02s
+     Running unittests src/lib.rs (/home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/x86_64-unknown-linux-gnu/debug/deps/broken_app-757dc33d8be80ce6)
+
+running 3 tests
+test tests::regression_average_positive_positive_absence ... ok
+test tests::regression_empty_slice ... ok
+test tests::regression_off_by_one_no_panic ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/demo.rs (/home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/x86_64-unknown-linux-gnu/debug/deps/demo-9f61c3e68c8abe0e)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/integration.rs (/home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/x86_64-unknown-linux-gnu/debug/deps/integration-1ba18281f901337c)
+
+running 6 tests
+test averages_only_positive ... ok
+test counts_non_zero_bytes ... ok
+test dedup_preserves_uniques ... ok
+test fib_small_numbers ... ok
+test normalize_simple ... ok
+test sums_even_numbers ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+=================================================================
+==12604==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 5 byte(s) in 1 object(s) allocated from:
+    #0 0x6530dff22df4  (/home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/x86_64-unknown-linux-gnu/debug/deps/integration-1ba18281f901337c+0xfcdf4) (BuildId: 653059a6412c1bc67003af39a4a0264fe728a2d4)
+    #1 0x6530dffe2106  (/home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/x86_64-unknown-linux-gnu/debug/deps/integration-1ba18281f901337c+0x1bc106) (BuildId: 653059a6412c1bc67003af39a4a0264fe728a2d4)
+    #2 0x6530dff99405  (/home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/x86_64-unknown-linux-gnu/debug/deps/integration-1ba18281f901337c+0x173405) (BuildId: 653059a6412c1bc67003af39a4a0264fe728a2d4)
+    #3 0x6530dffa2ece  (/home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/x86_64-unknown-linux-gnu/debug/deps/integration-1ba18281f901337c+0x17cece) (BuildId: 653059a6412c1bc67003af39a4a0264fe728a2d4)
+    #4 0x6530dff51ebe  (/home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/x86_64-unknown-linux-gnu/debug/deps/integration-1ba18281f901337c+0x12bebe) (BuildId: 653059a6412c1bc67003af39a4a0264fe728a2d4)
+    #5 0x6530dff536c6  (/home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/x86_64-unknown-linux-gnu/debug/deps/integration-1ba18281f901337c+0x12d6c6) (BuildId: 653059a6412c1bc67003af39a4a0264fe728a2d4)
+    #6 0x6530dff61954  (/home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/x86_64-unknown-linux-gnu/debug/deps/integration-1ba18281f901337c+0x13b954) (BuildId: 653059a6412c1bc67003af39a4a0264fe728a2d4)
+    #7 0x6530dff5b263  (/home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/x86_64-unknown-linux-gnu/debug/deps/integration-1ba18281f901337c+0x135263) (BuildId: 653059a6412c1bc67003af39a4a0264fe728a2d4)
+    #8 0x6530dff649d1  (/home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/x86_64-unknown-linux-gnu/debug/deps/integration-1ba18281f901337c+0x13e9d1) (BuildId: 653059a6412c1bc67003af39a4a0264fe728a2d4)
+    #9 0x6530dffdab1e  (/home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/x86_64-unknown-linux-gnu/debug/deps/integration-1ba18281f901337c+0x1b4b1e) (BuildId: 653059a6412c1bc67003af39a4a0264fe728a2d4)
+    #10 0x6530dff20706  (/home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/x86_64-unknown-linux-gnu/debug/deps/integration-1ba18281f901337c+0xfa706) (BuildId: 653059a6412c1bc67003af39a4a0264fe728a2d4)
+
+SUMMARY: AddressSanitizer: 5 byte(s) leaked in 1 allocation(s).
+error: test failed, to rerun pass `--test integration`
+
+Caused by:
+  process didn't exit successfully: `/home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/x86_64-unknown-linux-gnu/debug/deps/integration-1ba18281f901337c` (exit status: 1)
+note: test exited abnormally; to see the full output pass --no-capture to the harness.
