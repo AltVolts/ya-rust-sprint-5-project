@@ -9,10 +9,11 @@ pub fn leak_buffer(input: &[u8]) -> usize {
     input.iter().filter(|x| **x != 0).count()
 }
 
-/// Небрежная нормализация строки: удаляем пробелы и приводим к нижнему регистру,
-/// но игнорируем повторяющиеся пробелы/табуляции внутри текста.
 pub fn normalize(input: &str) -> String {
-    input.replace(' ', "").to_lowercase()
+    input
+        .split_whitespace()
+        .collect::<String>()
+        .to_lowercase()
 }
 
 pub fn average_positive(values: &[i64]) -> f64 {
@@ -43,7 +44,7 @@ mod tests {
 
     /// Регрессионный тест: раньше был выход за границу при любом вызове
     #[test]
-    fn regression_off_by_one_no_panic() {
+    fn regression_test_off_by_one_no_panic() {
         let data = [1, 2, 3];
         let result = sum_even(&data);
         assert_eq!(result, 2); // 2 — единственное чётное
@@ -52,14 +53,14 @@ mod tests {
     /// Дополнительно: проверяем пустой срез — граница len=0,
     /// и цикл `0..=0` тоже выходил за границу
     #[test]
-    fn regression_empty_slice() {
+    fn regression_test_empty_slice() {
         let data: [i64; 0] = [];
         let result = sum_even(&data);
         assert_eq!(result, 0);
     }
 
     #[test]
-    fn regression_average_positive_positive_absence() {
+    fn regression_test_average_positive_positive_absence() {
         // проверка на отсутсвие положительных чисел
         assert!((average_positive(&[-1, -2, -3])).abs() < f64::EPSILON);
         // проверка на пустой массив
@@ -69,7 +70,7 @@ mod tests {
     }
 
     #[test]
-    fn regression_leak_buffer_correct_count() {
+    fn regression_test_leak_buffer_correct_count() {
         // Обычный случай
         assert_eq!(leak_buffer(&[0, 1, 0, 2, 3]), 3);
         // Все нули
@@ -82,4 +83,24 @@ mod tests {
         let big = vec![1u8; 10_000];
         assert_eq!(leak_buffer(&big), 10_000);
     }
+
+    #[test]
+        fn regression_test_normalize() {
+            // базовый случай – только пробелы
+            assert_eq!(normalize("Hello World"), "helloworld");
+            // табуляция должна быть удалена
+            assert_eq!(normalize("a\tb"), "ab");
+            // перевод строки должен быть удалён
+            assert_eq!(normalize("line1\nline2"), "line1line2");
+            // возврат каретки
+            assert_eq!(normalize("word\rnext"), "wordnext");
+            // смесь пробелов, табуляций, переносов
+            let input = "  Hello \t World \n Rust  ";
+            let expected = "helloworldrust";
+            assert_eq!(normalize(input), expected);
+            // "пустой" случай
+            assert_eq!(normalize(""), "");
+            // полный случай
+            assert_eq!(normalize("   \t \n  "), "");
+        }
 }
