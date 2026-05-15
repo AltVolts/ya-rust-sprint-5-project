@@ -1,0 +1,137 @@
+warning[E0133]: dereference of raw pointer is unsafe and requires unsafe block
+  --> broken-app/src/lib.rs:52:15
+   |
+52 |     let val = *raw;
+   |               ^^^^ dereference of raw pointer
+   |
+   = note: raw pointers may be null, dangling or unaligned; they can violate aliasing rules and cause data races: all of these are undefined behavior
+note: an unsafe function restricts its caller, but its body is safe by default
+  --> broken-app/src/lib.rs:49:1
+   |
+49 | pub unsafe fn use_after_free() -> i32 {
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   = note: for more information, see <https://doc.rust-lang.org/edition-guide/rust-2024/unsafe-op-in-unsafe-fn.html>
+   = note: `#[warn(unsafe_op_in_unsafe_fn)]` (part of `#[warn(rust_2024_compatibility)]`) on by default
+
+   Compiling crossbeam-deque v0.8.6
+warning[E0133]: call to unsafe function `std::boxed::Box::<T>::from_raw` is unsafe and requires unsafe block
+  --> broken-app/src/lib.rs:53:10
+   |
+53 |     drop(Box::from_raw(raw));
+   |          ^^^^^^^^^^^^^^^^^^ call to unsafe function
+   |
+   = note: consult the function's documentation for information on how to avoid undefined behavior
+   = note: for more information, see <https://doc.rust-lang.org/edition-guide/rust-2024/unsafe-op-in-unsafe-fn.html>
+
+warning[E0133]: dereference of raw pointer is unsafe and requires unsafe block
+  --> broken-app/src/lib.rs:54:11
+   |
+54 |     val + *raw
+   |           ^^^^ dereference of raw pointer
+   |
+   = note: raw pointers may be null, dangling or unaligned; they can violate aliasing rules and cause data races: all of these are undefined behavior
+   = note: for more information, see <https://doc.rust-lang.org/edition-guide/rust-2024/unsafe-op-in-unsafe-fn.html>
+
+For more information about this error, try `rustc --explain E0133`.
+warning: `broken-app` (lib) generated 3 warnings (run `cargo fix --lib -p broken-app` to apply 1 suggestion)
+   
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 8.18s
+     Running unittests src/lib.rs (/home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/miri/x86_64-unknown-linux-gnu/debug/deps/broken_app-1a24c247aa6ec68b)
+warning[E0133]: dereference of raw pointer is unsafe and requires unsafe block
+  --> broken-app/src/lib.rs:52:15
+   |
+52 |     let val = *raw;
+   |               ^^^^ dereference of raw pointer
+   |
+   = note: raw pointers may be null, dangling or unaligned; they can violate aliasing rules and cause data races: all of these are undefined behavior
+note: an unsafe function restricts its caller, but its body is safe by default
+  --> broken-app/src/lib.rs:49:1
+   |
+49 | pub unsafe fn use_after_free() -> i32 {
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   = note: for more information, see <https://doc.rust-lang.org/edition-guide/rust-2024/unsafe-op-in-unsafe-fn.html>
+   = note: `#[warn(unsafe_op_in_unsafe_fn)]` (part of `#[warn(rust_2024_compatibility)]`) on by default
+
+warning[E0133]: call to unsafe function `std::boxed::Box::<T>::from_raw` is unsafe and requires unsafe block
+  --> broken-app/src/lib.rs:53:10
+   |
+53 |     drop(Box::from_raw(raw));
+   |          ^^^^^^^^^^^^^^^^^^ call to unsafe function
+   |
+   = note: consult the function's documentation for information on how to avoid undefined behavior
+   = note: for more information, see <https://doc.rust-lang.org/edition-guide/rust-2024/unsafe-op-in-unsafe-fn.html>
+
+warning[E0133]: dereference of raw pointer is unsafe and requires unsafe block
+  --> broken-app/src/lib.rs:54:11
+   |
+54 |     val + *raw
+   |           ^^^^ dereference of raw pointer
+   |
+   = note: raw pointers may be null, dangling or unaligned; they can violate aliasing rules and cause data races: all of these are undefined behavior
+   = note: for more information, see <https://doc.rust-lang.org/edition-guide/rust-2024/unsafe-op-in-unsafe-fn.html>
+
+
+running 3 tests
+test tests::regression_average_positive_positive_absence ... ok
+test tests::regression_empty_slice ... ok
+test tests::regression_off_by_one_no_panic ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.38s
+
+     Running unittests src/bin/demo.rs (/home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/miri/x86_64-unknown-linux-gnu/debug/deps/demo-5df0480a4d4caab1)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running tests/integration.rs (/home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/miri/x86_64-unknown-linux-gnu/debug/deps/integration-b53b775a85b714e9)
+
+running 6 tests
+test averages_only_positive ... ok
+test counts_non_zero_bytes ... ok
+test dedup_preserves_uniques ... ok
+test fib_small_numbers ... ok
+test normalize_simple ... ok
+test sums_even_numbers ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.68s
+
+error: memory leaked: alloc45410 (Rust heap, size: 5, align: 1), allocated here:
+   --> /home/alex/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/raw_vec/mod.rs:465:41
+    |
+465 | ...   AllocInit::Uninitialized => alloc.allocate(layout),
+    |                                   ^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = note: stack backtrace:
+            0: alloc::raw_vec::RawVecInner::try_allocate_in
+                at /home/alex/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/raw_vec/mod.rs:465:41: 465:63
+            1: alloc::raw_vec::RawVecInner::with_capacity_in
+                at /home/alex/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/raw_vec/mod.rs:434:15: 434:92
+            2: alloc::raw_vec::RawVec::<u8>::with_capacity_in
+                at /home/alex/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/raw_vec/mod.rs:177:20: 177:77
+            3: std::vec::Vec::<u8>::with_capacity_in
+                at /home/alex/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/vec/mod.rs:977:20: 977:61
+            4: <u8 as std::slice::<impl [T]>::to_vec_in::ConvertVec>::to_vec::<std::alloc::Global>
+                at /home/alex/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/slice.rs:448:29: 448:62
+            5: std::slice::<impl [u8]>::to_vec_in::<std::alloc::Global>
+                at /home/alex/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/slice.rs:400:16: 400:38
+            6: std::slice::<impl [u8]>::to_vec
+                at /home/alex/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/slice.rs:376:9: 376:31
+            7: broken_app::leak_buffer
+                at broken-app/src/lib.rs:11:17: 11:31
+            8: counts_non_zero_bytes
+                at broken-app/tests/integration.rs:13:16: 13:34
+            9: counts_non_zero_bytes::{closure#0}
+                at broken-app/tests/integration.rs:11:27: 11:27
+
+note: some details are omitted, run with `MIRIFLAGS=-Zmiri-backtrace=full` for a verbose backtrace
+
+note: set `MIRIFLAGS=-Zmiri-ignore-leaks` to disable this check
+
+error: aborting due to 1 previous error
+
+error: test failed, to rerun pass `--test integration`
+
+Caused by:
+  process didn't exit successfully: `/home/alex/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin/cargo-miri runner /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/miri/x86_64-unknown-linux-gnu/debug/deps/integration-b53b775a85b714e9` (exit status: 1)
+note: test exited abnormally; to see the full output pass --no-capture to the harness.

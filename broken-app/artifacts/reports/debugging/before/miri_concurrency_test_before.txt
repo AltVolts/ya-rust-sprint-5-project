@@ -1,0 +1,49 @@
+alex@DESKTOP-UFDINQ9:~/RustProjects/YaRust/sprint5/ya-rust-spint-5-project$ cargo +nightly miri test -p broken-app
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.03s
+     Running unittests src/lib.rs (target/miri/x86_64-unknown-linux-gnu/debug/deps/broken_app-1a24c247aa6ec68b)
+
+running 5 tests
+test tests::regression_test_average_positive_positive_absence ... ok
+test tests::regression_test_empty_slice ... ok
+test tests::regression_test_leak_buffer_correct_count ... ok
+test tests::regression_test_normalize ... ok
+test tests::regression_test_off_by_one_no_panic ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.09s
+
+     Running unittests src/bin/demo.rs (target/miri/x86_64-unknown-linux-gnu/debug/deps/demo-5df0480a4d4caab1)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running tests/integration.rs (target/miri/x86_64-unknown-linux-gnu/debug/deps/integration-b53b775a85b714e9)
+
+running 7 tests
+test averages_only_positive ... ok
+test counts_non_zero_bytes ... ok
+test dedup_preserves_uniques ... ok
+test fib_small_numbers ... ok
+test normalize_simple ... ok
+test sums_even_numbers ... ok
+test test_race_increment_correct_total ... error: Undefined Behavior: Data race detected between (1) non-atomic write on thread `unnamed-8` and (2) non-atomic read on thread `unnamed-9` at alloc77152
+ --> broken-app/src/concurrency.rs:17:20
+  |
+  = note: (2) just happened here
+help: and (1) occurred earlier here
+ --> broken-app/src/concurrency.rs:17:20
+  = help: this indicates a bug in the program: it performed an invalid operation, and caused Undefined Behavior
+  = help: see https://doc.rust-lang.org/nightly/reference/behavior-considered-undefined.html for further information
+  = note: this is on thread `unnamed-9`
+note: the current function got called indirectly due to this code
+ --> broken-app/src/concurrency.rs:14:21
+
+note: some details are omitted, run with `MIRIFLAGS=-Zmiri-backtrace=full` for a verbose backtrace
+
+error: aborting due to 1 previous error
+
+error: test failed, to rerun pass `-p broken-app --test integration`
+
+Caused by:
+  process didn't exit successfully: `/home/alex/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin/cargo-miri runner /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/miri/x86_64-unknown-linux-gnu/debug/deps/integration-b53b775a85b714e9` (exit status: 1)
+note: test exited abnormally; to see the full output pass --no-capture to the harness.

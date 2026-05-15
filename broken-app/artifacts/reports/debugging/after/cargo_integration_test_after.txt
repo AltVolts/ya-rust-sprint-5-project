@@ -1,0 +1,35 @@
+alex@DESKTOP-UFDINQ9:~/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/broken-app$ RUSTFLAGS="-Zsanitizer=address" cargo +nightly test --target x86_64-unknown-linux-gnu --test integration
+warning: profiles for the non root package will be ignored, specify profiles at the workspace root:
+package:   /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/broken-app/Cargo.toml
+workspace: /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/Cargo.toml
+   Compiling broken-app v0.1.0 (/home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/broken-app)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.48s
+     Running tests/integration.rs (/home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/x86_64-unknown-linux-gnu/debug/deps/integration-1ba18281f901337c)
+
+running 6 tests
+test averages_only_positive ... ok
+test counts_non_zero_bytes ... ok
+test dedup_preserves_uniques ... ok
+test normalize_simple ... ok
+test fib_small_numbers ... ok
+test sums_even_numbers ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+alex@DESKTOP-UFDINQ9:~/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/broken-app$ RUSTFLAGS="-Zsanitizer=thread" cargo +nightly test -Zbuild-std --target x86_64-unknown-linux-gnu --test integration
+warning: profiles for the non root package will be ignored, specify profiles at the workspace root:
+package:   /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/broken-app/Cargo.toml
+workspace: /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/Cargo.toml
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.09s
+     Running tests/integration.rs (/home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/x86_64-unknown-linux-gnu/debug/deps/integration-8b7f7a4d9b8223a4)
+
+running 6 tests
+test averages_only_positive ... ok
+test counts_non_zero_bytes ... ok
+test dedup_preserves_uniques ... ok
+test fib_small_numbers ... ok
+test normalize_simple ... ok
+test sums_even_numbers ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
