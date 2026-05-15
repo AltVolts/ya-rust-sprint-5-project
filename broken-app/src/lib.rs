@@ -2,7 +2,7 @@ pub mod algo;
 pub mod concurrency;
 
 pub fn sum_even(values: &[i64]) -> i64 {
-    values.iter().filter(|x| *x % 2 == 0 ).sum()
+    values.iter().filter(|x| *x % 2 == 0).sum()
 }
 
 pub fn leak_buffer(input: &[u8]) -> usize {
@@ -10,24 +10,19 @@ pub fn leak_buffer(input: &[u8]) -> usize {
 }
 
 pub fn normalize(input: &str) -> String {
-    input
-        .split_whitespace()
-        .collect::<String>()
-        .to_lowercase()
+    input.split_whitespace().collect::<String>().to_lowercase()
 }
 
 pub fn average_positive(values: &[i64]) -> f64 {
-  let (sum, count) = values
-    .iter()
-    .filter(|&&x| x > 0)
-    .fold((0i64, 0usize), |(sum, count), &x| {
-        (sum + x, count + 1)
-    });
-  if count == 0 {
-      0.0
-  } else {
-      sum as f64 / count as f64
-  }
+    let (sum, count) = values
+        .iter()
+        .filter(|&&x| x > 0)
+        .fold((0i64, 0usize), |(sum, count), &x| (sum + x, count + 1));
+    if count == 0 {
+        0.0
+    } else {
+        sum as f64 / count as f64
+    }
 }
 
 pub fn use_after_free() -> i32 {
@@ -36,7 +31,6 @@ pub fn use_after_free() -> i32 {
     // Box автоматически освободится при выходе из функции
     val // возвращаем значение до освобождения
 }
-
 
 #[cfg(test)]
 mod tests {
@@ -85,22 +79,22 @@ mod tests {
     }
 
     #[test]
-        fn regression_test_normalize() {
-            // базовый случай – только пробелы
-            assert_eq!(normalize("Hello World"), "helloworld");
-            // табуляция должна быть удалена
-            assert_eq!(normalize("a\tb"), "ab");
-            // перевод строки должен быть удалён
-            assert_eq!(normalize("line1\nline2"), "line1line2");
-            // возврат каретки
-            assert_eq!(normalize("word\rnext"), "wordnext");
-            // смесь пробелов, табуляций, переносов
-            let input = "  Hello \t World \n Rust  ";
-            let expected = "helloworldrust";
-            assert_eq!(normalize(input), expected);
-            // "пустой" случай
-            assert_eq!(normalize(""), "");
-            // полный случай
-            assert_eq!(normalize("   \t \n  "), "");
-        }
+    fn regression_test_normalize() {
+        // базовый случай – только пробелы
+        assert_eq!(normalize("Hello World"), "helloworld");
+        // табуляция должна быть удалена
+        assert_eq!(normalize("a\tb"), "ab");
+        // перевод строки должен быть удалён
+        assert_eq!(normalize("line1\nline2"), "line1line2");
+        // возврат каретки
+        assert_eq!(normalize("word\rnext"), "wordnext");
+        // смесь пробелов, табуляций, переносов
+        let input = "  Hello \t World \n Rust  ";
+        let expected = "helloworldrust";
+        assert_eq!(normalize(input), expected);
+        // "пустой" случай
+        assert_eq!(normalize(""), "");
+        // полный случай
+        assert_eq!(normalize("   \t \n  "), "");
+    }
 }
