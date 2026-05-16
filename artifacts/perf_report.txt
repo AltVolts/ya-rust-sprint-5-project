@@ -1,0 +1,142 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 54K of event 'cpu-clock:upppH'
+# Event count (approx.): 13637500000
+#
+# Children      Self  Command          Shared Object     Symbol                                                                                                                         
+# ........  ........  ...............  ................  ...............................................................................................................................
+#
+   100.00%     0.00%  profile_workloa  profile_workload  [.] _start
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               std::rt::lang_start
+               |          
+               |--33.87%--broken_app::algo::slow_dedup
+               |          
+               |--18.62%--broken_app::algo::slow_fib
+               |          
+               |--16.52%--<core::slice::iter::Iter<T> as core::iter::traits::iterator::Iterator>::next
+               |          
+               |--8.68%--core::ops::function::FnMut::call_mut
+               |          
+               |--8.06%--core::cmp::impls::<impl core::cmp::PartialEq for u64>::eq
+               |          
+               |--7.48%--core::cmp::impls::<impl core::cmp::PartialEq<&B> for &A>::eq
+               |          
+                --6.63%--core::slice::sort::unstable::ipnsort
+
+   100.00%     0.00%  profile_workloa  libc.so.6         [.] __libc_start_main@@GLIBC_2.34
+            |
+            ---__libc_start_main@@GLIBC_2.34
+               std::rt::lang_start
+               |          
+               |--33.87%--broken_app::algo::slow_dedup
+               |          
+               |--18.62%--broken_app::algo::slow_fib
+               |          
+               |--16.52%--<core::slice::iter::Iter<T> as core::iter::traits::iterator::Iterator>::next
+               |          
+               |--8.68%--core::ops::function::FnMut::call_mut
+               |          
+               |--8.06%--core::cmp::impls::<impl core::cmp::PartialEq for u64>::eq
+               |          
+               |--7.48%--core::cmp::impls::<impl core::cmp::PartialEq<&B> for &A>::eq
+               |          
+                --6.63%--core::slice::sort::unstable::ipnsort
+
+   100.00%     0.00%  profile_workloa  profile_workload  [.] std::rt::lang_start
+            |
+            ---std::rt::lang_start
+               |          
+               |--33.87%--broken_app::algo::slow_dedup
+               |          
+               |--18.62%--broken_app::algo::slow_fib
+               |          
+               |--16.52%--<core::slice::iter::Iter<T> as core::iter::traits::iterator::Iterator>::next
+               |          
+               |--8.68%--core::ops::function::FnMut::call_mut
+               |          
+               |--8.06%--core::cmp::impls::<impl core::cmp::PartialEq for u64>::eq
+               |          
+               |--7.48%--core::cmp::impls::<impl core::cmp::PartialEq<&B> for &A>::eq
+               |          
+                --6.63%--core::slice::sort::unstable::ipnsort
+
+    33.87%    33.87%  profile_workloa  profile_workload  [.] broken_app::algo::slow_dedup
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               std::rt::lang_start
+               broken_app::algo::slow_dedup
+
+    18.62%    18.62%  profile_workloa  profile_workload  [.] broken_app::algo::slow_fib
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               std::rt::lang_start
+               broken_app::algo::slow_fib
+
+    16.52%    16.52%  profile_workloa  profile_workload  [.] <core::slice::iter::Iter<T> as core::iter::traits::iterator::Iterator>::next
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               std::rt::lang_start
+               <core::slice::iter::Iter<T> as core::iter::traits::iterator::Iterator>::next
+
+     8.68%     8.68%  profile_workloa  profile_workload  [.] core::ops::function::FnMut::call_mut
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               std::rt::lang_start
+               core::ops::function::FnMut::call_mut
+
+     8.06%     8.06%  profile_workloa  profile_workload  [.] core::cmp::impls::<impl core::cmp::PartialEq for u64>::eq
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               std::rt::lang_start
+               core::cmp::impls::<impl core::cmp::PartialEq for u64>::eq
+
+     7.48%     7.48%  profile_workloa  profile_workload  [.] core::cmp::impls::<impl core::cmp::PartialEq<&B> for &A>::eq
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               std::rt::lang_start
+               core::cmp::impls::<impl core::cmp::PartialEq<&B> for &A>::eq
+
+     6.63%     6.63%  profile_workloa  profile_workload  [.] core::slice::sort::unstable::ipnsort
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               std::rt::lang_start
+               core::slice::sort::unstable::ipnsort
+
+     0.04%     0.04%  profile_workloa  profile_workload  [.] core::iter::adapters::filter::filter_fold::_$u7b$$u7b$closure$u7d$$u7d$::h56e2524f3aa1f6e6
+     0.02%     0.02%  profile_workloa  profile_workload  [.] <i64 as core::ops::arith::Rem>::rem
+     0.02%     0.02%  profile_workloa  profile_workload  [.] broken_app::sum_even::_$u7b$$u7b$closure$u7d$$u7d$::h5e87484327e21347
+     0.01%     0.01%  profile_workloa  profile_workload  [.] <core::slice::iter::Iter<T> as core::iter::traits::iterator::Iterator>::fold
+     0.01%     0.01%  profile_workloa  profile_workload  [.] <core::ops::range::Range<T> as core::iter::range::RangeIteratorImpl>::spec_next
+     0.01%     0.01%  profile_workloa  profile_workload  [.] alloc::vec::Vec<T,A>::push_mut
+     0.01%     0.01%  profile_workloa  profile_workload  [.] core::slice::<impl [T]>::sort_unstable
+     0.01%     0.01%  profile_workloa  profile_workload  [.] <&i64 as core::ops::arith::Rem<i64>>::rem
+     0.00%     0.00%  profile_workloa  profile_workload  [.] _$LT$i64$u20$as$u20$core..iter..traits..accum..Sum$LT$$RF$i64$GT$$GT$::sum::_$u7b$$u7b$closure$u7d$$u7d$::h3df67f026030cdd5
+     0.00%     0.00%  profile_workloa  profile_workload  [.] core::iter::traits::iterator::Iterator::fold
+     0.00%     0.00%  profile_workloa  libc.so.6         [.] realloc
+     0.00%     0.00%  profile_workloa  profile_workload  [.] <&alloc::vec::Vec<T,A> as core::iter::traits::collect::IntoIterator>::into_iter
+     0.00%     0.00%  profile_workloa  profile_workload  [.] <core::ops::range::Range<T> as core::iter::range::RangeIteratorImpl>::spec_next
+     0.00%     0.00%  profile_workloa  profile_workload  [.] <i64 as core::iter::range::Step>::forward_unchecked
+     0.00%     0.00%  profile_workloa  profile_workload  [.] <u64 as core::iter::range::Step>::forward_unchecked
+     0.00%     0.00%  profile_workloa  profile_workload  [.] alloc::vec::Vec<T,A>::push
+     0.00%     0.00%  profile_workloa  profile_workload  [.] core::iter::traits::iterator::Iterator::fold
+     0.00%     0.00%  profile_workloa  profile_workload  [.] alloc::raw_vec::RawVec<T,A>::grow_one
+     0.00%     0.00%  profile_workloa  profile_workload  [.] _RNvMs4_NtCslNYArtu3iFV_5alloc7raw_vecNtB5_11RawVecInner14grow_amortizedCsduwmD7cSIQq_5gimli
+     0.00%     0.00%  profile_workloa  profile_workload  [.] _RNvMs4_NtCslNYArtu3iFV_5alloc7raw_vecNtB5_11RawVecInner11finish_growCsduwmD7cSIQq_5gimli
+
+
+#
+# (Tip: To show assembler sample contexts use perf record -b / perf script -F +brstackinsn --xed)
+#
