@@ -4,7 +4,7 @@ set -e
 
 export PATH="$HOME/.cargo/bin:$PATH"
 
-LOGDIR="${1:-$(dirname "$0")/../artifacts}"
+LOGDIR="${1:-$(dirname "$0")/../../artifacts/debugging}"
 mkdir -p "$LOGDIR"
 
 RUSTFLAGS="-Zsanitizer=address" \

@@ -1,31 +1,65 @@
-==14768== Memcheck, a memory error detector
-==14768== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
-==14768== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
-==14768== Command: target/debug/deps/broken_app-2d89365d1357f924
-==14768== 
+==30103== Memcheck, a memory error detector
+==30103== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==30103== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==30103== Command: target/debug/deps/broken_app-2d89365d1357f924
+==30103== 
 
 running 5 tests
+test tests::regression_test_normalize ... ok
 test tests::regression_test_leak_buffer_correct_count ... ok
 test tests::regression_test_average_positive_positive_absence ... ok
 test tests::regression_test_empty_slice ... ok
-test tests::regression_test_normalize ... ok
 test tests::regression_test_off_by_one_no_panic ... ok
 
-test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.09s
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.10s
 
-==14768== 
-==14768== HEAP SUMMARY:
-==14768==     in use at exit: 544 bytes in 1 blocks
-==14768==   total heap usage: 746 allocs, 745 frees, 98,876 bytes allocated
-==14768== 
-==14768== LEAK SUMMARY:
-==14768==    definitely lost: 0 bytes in 0 blocks
-==14768==    indirectly lost: 0 bytes in 0 blocks
-==14768==      possibly lost: 0 bytes in 0 blocks
-==14768==    still reachable: 544 bytes in 1 blocks
-==14768==         suppressed: 0 bytes in 0 blocks
-==14768== Reachable blocks (those to which a pointer was found) are not shown.
-==14768== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==14768== 
-==14768== For lists of detected and suppressed errors, rerun with: -s
-==14768== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==30103== 
+==30103== HEAP SUMMARY:
+==30103==     in use at exit: 592 bytes in 2 blocks
+==30103==   total heap usage: 749 allocs, 747 frees, 99,068 bytes allocated
+==30103== 
+==30103== 48 bytes in 1 blocks are possibly lost in loss record 1 of 2
+==30103==    at 0x4846828: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==30103==    by 0x1A5BFB: alloc (unix.rs:14)
+==30103==    by 0x1A5BFB: alloc_impl (alloc.rs:151)
+==30103==    by 0x1A5BFB: allocate (alloc.rs:214)
+==30103==    by 0x1A5BFB: {closure#0}<std::thread::thread::Inner, std::alloc::System> (sync.rs:805)
+==30103==    by 0x1A5BFB: allocate_for_layout<core::mem::maybe_uninit::MaybeUninit<std::thread::thread::Inner>, alloc::sync::{impl#17}::new_uninit_in::{closure_env#0}<std::thread::thread::Inner, std::alloc::System>, fn(*mut u8) -> *mut alloc::sync::ArcInner<core::mem::maybe_uninit::MaybeUninit<std::thread::thread::Inner>>> (sync.rs:2162)
+==30103==    by 0x1A5BFB: new_uninit_in<std::thread::thread::Inner, std::alloc::System> (sync.rs:803)
+==30103==    by 0x1A5BFB: <std::thread::thread::Thread>::new (thread.rs:102)
+==30103==    by 0x1B361F: std::thread::current::init_current (current.rs:294)
+==30103==    by 0x19AE75: current_or_unnamed (current.rs:251)
+==30103==    by 0x19AE75: <std::sync::mpmc::context::Context>::new (context.rs:72)
+==30103==    by 0x14403A: __rust_std_internal_init_fn (context.rs:43)
+==30103==    by 0x14403A: call_once<fn() -> core::cell::Cell<core::option::Option<std::sync::mpmc::context::Context>>, ()> (function.rs:250)
+==30103==    by 0x14403A: unwrap_or_else<core::cell::Cell<core::option::Option<std::sync::mpmc::context::Context>>, fn() -> core::cell::Cell<core::option::Option<std::sync::mpmc::context::Context>>> (option.rs:1067)
+==30103==    by 0x14403A: <std::sys::thread_local::native::lazy::Storage<core::cell::Cell<core::option::Option<std::sync::mpmc::context::Context>>, ()>>::get_or_init_slow::<<std::sync::mpmc::context::Context>::with::CONTEXT::__rust_std_internal_init_fn> (lazy.rs:80)
+==30103==    by 0x15B092: get_or_init<core::cell::Cell<core::option::Option<std::sync::mpmc::context::Context>>, (), fn() -> core::cell::Cell<core::option::Option<std::sync::mpmc::context::Context>>> (lazy.rs:62)
+==30103==    by 0x15B092: {closure#0} (mod.rs:97)
+==30103==    by 0x15B092: call_once<std::sync::mpmc::context::{impl#0}::with::CONTEXT::{constant#0}::{closure_env#0}, (core::option::Option<&mut core::option::Option<core::cell::Cell<core::option::Option<std::sync::mpmc::context::Context>>>>)> (function.rs:250)
+==30103==    by 0x15B092: try_with<core::cell::Cell<core::option::Option<std::sync::mpmc::context::Context>>, std::sync::mpmc::context::{impl#0}::with::{closure_env#1}<std::sync::mpmc::list::{impl#3}::recv::{closure_env#1}<test::event::CompletedTest>, ()>, ()> (local.rs:512)
+==30103==    by 0x15B092: with<std::sync::mpmc::list::{impl#3}::recv::{closure_env#1}<test::event::CompletedTest>, ()> (context.rs:53)
+==30103==    by 0x15B092: <std::sync::mpmc::list::Channel<test::event::CompletedTest>>::recv (list.rs:442)
+==30103==    by 0x167E23: recv_deadline<test::event::CompletedTest> (mod.rs:1120)
+==30103==    by 0x167E23: recv_timeout<test::event::CompletedTest> (mod.rs:1052)
+==30103==    by 0x167E23: recv_timeout<test::event::CompletedTest> (mpsc.rs:909)
+==30103==    by 0x167E23: run_tests<test::console::run_tests_console::{closure_env#2}> (lib.rs:456)
+==30103==    by 0x167E23: test::console::run_tests_console (console.rs:327)
+==30103==    by 0x156428: test_main_with_exit_callback<test::test_main::{closure_env#0}> (lib.rs:160)
+==30103==    by 0x156428: test::test_main (lib.rs:101)
+==30103==    by 0x153C7A: test::test_main_static (lib.rs:183)
+==30103==    by 0x13FB32: broken_app::main (lib.rs:1)
+==30103==    by 0x1437AA: core::ops::function::FnOnce::call_once (function.rs:250)
+==30103==    by 0x14356D: std::sys::backtrace::__rust_begin_short_backtrace (backtrace.rs:166)
+==30103== 
+==30103== LEAK SUMMARY:
+==30103==    definitely lost: 0 bytes in 0 blocks
+==30103==    indirectly lost: 0 bytes in 0 blocks
+==30103==      possibly lost: 48 bytes in 1 blocks
+==30103==    still reachable: 544 bytes in 1 blocks
+==30103==         suppressed: 0 bytes in 0 blocks
+==30103== Reachable blocks (those to which a pointer was found) are not shown.
+==30103== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==30103== 
+==30103== For lists of detected and suppressed errors, rerun with: -s
+==30103== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)

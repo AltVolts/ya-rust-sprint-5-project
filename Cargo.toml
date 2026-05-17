@@ -2,7 +2,7 @@
 members = ["broken-app", "reference-app"]
 resolver = "2"
 
-[profile.release]
+[profile.profiling]
+inherits = "release"
 debug = true
-strip = false
-opt-level = 0
+strip = false 

@@ -10,12 +10,12 @@ if ! command -v heaptrack &>/dev/null; then
     exit 1
 fi
 
-LOGDIR="${1:-$(dirname "$0")/../artifacts/profiling}"
+LOGDIR="${1:-$(dirname "$0")/../../artifacts/profiling}"
 mkdir -p "$LOGDIR"
 
-cargo build --release -p broken-app
+cargo build --profile profiling -p broken-app
 
-BIN="target/release/profile_workload"
+BIN="target/profiling/profile_workload"
 if [ ! -x "$BIN" ]; then
     echo "Бинарник $BIN не найден" >&2
     exit 1
