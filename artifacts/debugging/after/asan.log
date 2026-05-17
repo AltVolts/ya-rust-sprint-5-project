@@ -1,11 +1,11 @@
-    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.16s
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.11s
      Running unittests src/lib.rs (target/x86_64-unknown-linux-gnu/debug/deps/broken_app-59d8643ddeb6074c)
 
 running 5 tests
 test tests::regression_test_average_positive_positive_absence ... ok
 test tests::regression_test_empty_slice ... ok
-test tests::regression_test_normalize ... ok
 test tests::regression_test_off_by_one_no_panic ... ok
+test tests::regression_test_normalize ... ok
 test tests::regression_test_leak_buffer_correct_count ... ok
 
 test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
@@ -25,8 +25,8 @@ test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fini
      Running tests/integration.rs (target/x86_64-unknown-linux-gnu/debug/deps/integration-9038f6ccd93e7eff)
 
 running 7 tests
-test counts_non_zero_bytes ... ok
 test averages_only_positive ... ok
+test counts_non_zero_bytes ... ok
 test dedup_preserves_uniques ... ok
 test fib_small_numbers ... ok
 test normalize_simple ... ok

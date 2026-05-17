@@ -1,12 +1,12 @@
-    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.03s
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.06s
      Running unittests src/lib.rs (target/debug/deps/broken_app-2d89365d1357f924)
 
 running 5 tests
 test tests::regression_test_average_positive_positive_absence ... ok
 test tests::regression_test_empty_slice ... ok
+test tests::regression_test_leak_buffer_correct_count ... ok
 test tests::regression_test_normalize ... ok
 test tests::regression_test_off_by_one_no_panic ... ok
-test tests::regression_test_leak_buffer_correct_count ... ok
 
 test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 
