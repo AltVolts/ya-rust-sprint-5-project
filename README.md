@@ -152,7 +152,7 @@
 ### Запуск бенчмарков «до» оптимизации
 
 ```bash
-./scripts/benchmarks/run_bench_before.sh  [папка_для_логов]
+./scripts/benchmarking/run_bench_before.sh  [папка_для_логов]
 ```
 
 Результаты в `artifacts/benchmarking/before/`:
@@ -178,7 +178,7 @@ test slow_dedup_broken ... bench:    10195102 ns/iter (+/- 78415)
 ### Запуск бенчмарков «после» оптимизации
 
 ```bash
-./scripts/benchmarks/run_bench_after.sh [папка_для_логов]
+./scripts/benchmarking/run_bench_after.sh [папка_для_логов]
 ```
 
 Результаты в `artifacts/benchmarking/after/`:
