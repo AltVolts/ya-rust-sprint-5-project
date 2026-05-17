@@ -1,0 +1,1117 @@
+reading file "/home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/scripts/../artifacts/profiling/heaptrack.gz" - please wait, this might take some time...
+Debuggee command was: target/release/profile_workload
+finished reading file, now analyzing data:
+
+MOST CALLS TO ALLOCATION FUNCTIONS
+40000 calls to allocation functions with 0B peak consumption from
+_RNvMs4_NtCslNYArtu3iFV_5alloc7raw_vecNtB5_11RawVecInner11finish_growCsduwmD7cSIQq_5gimli
+  in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+10000 calls with 0B peak consumption from:
+    _RNvMs4_NtCslNYArtu3iFV_5alloc7raw_vecNtB5_11RawVecInner14grow_amortizedCsduwmD7cSIQq_5gimli
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    _RINvNvMs2_NtCslNYArtu3iFV_5alloc7raw_vecINtB8_11RawVecInnerpE7reserve21do_reserve_and_handleNtNtBa_5alloc6GlobalECs4X4t9plMPHF_9addr2line
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    alloc::vec::Vec$LT$T$C$A$GT$::append_elements::hc063ce75554c7d73
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/vec/mod.rs:2879
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    _$LT$alloc..vec..Vec$LT$T$C$A$GT$$u20$as$u20$alloc..vec..spec_extend..SpecExtend$LT$$RF$T$C$core..slice..iter..Iter$LT$T$GT$$GT$$GT$::spec_extend::hb293165f0654e367
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/vec/spec_extend.rs:56
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    alloc::vec::Vec$LT$T$C$A$GT$::extend_from_slice::h7d25f6bfe2936516
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/vec/mod.rs:3500
+    alloc::string::String::push_str::ha239aabce61bdcba
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/string.rs:1102
+    _$LT$T$u20$as$u20$alloc..string..SpecExtendStr$GT$::spec_extend_into::_$u7b$$u7b$closure$u7d$$u7d$::h19fe26ea9c2d44da
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/string.rs:2525
+    core::iter::traits::iterator::Iterator::for_each::call::_$u7b$$u7b$closure$u7d$$u7d$::h76862956a1bf1132
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/iter/traits/iterator.rs:842
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    core::iter::traits::iterator::Iterator::fold::h3b757287ff9449a3
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/iter/traits/iterator.rs:2647
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    core::iter::traits::iterator::Iterator::for_each::hbe20f81ad1785902
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/iter/traits/iterator.rs:845
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    _$LT$T$u20$as$u20$alloc..string..SpecExtendStr$GT$::spec_extend_into::h7145ed1acb7ce9ec
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/string.rs:2525
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    _$LT$alloc..string..String$u20$as$u20$core..iter..traits..collect..Extend$LT$$RF$str$GT$$GT$::extend::hf0ad2628253f7cc7
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/string.rs:2508
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    _$LT$alloc..string..String$u20$as$u20$core..iter..traits..collect..FromIterator$LT$$RF$str$GT$$GT$::from_iter::he9a7196ca130323f
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/string.rs:2389
+    core::iter::traits::iterator::Iterator::collect::hec7ba1790c2f146c
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/iter/traits/iterator.rs:2064
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    broken_app::normalize::h9b2779b741eef085
+      at broken-app/src/lib.rs:13
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    profile_workload::main::h6d731ed102210901
+      at broken-app/src/bin/profile_workload.rs:17
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    core::ops::function::FnOnce::call_once::hfbfdabc8a6ada184
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ops/function.rs:250
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    std::sys::backtrace::__rust_begin_short_backtrace::ha691ec63b1c6f2e7
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/sys/backtrace.rs:166
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    std::rt::lang_start::_$u7b$$u7b$closure$u7d$$u7d$::hc223f18a5fc58463
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/rt.rs:206
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    _RNvXs0_NtNtNtCsgEmfK2I1SDS_4core3ops8function5implsRDINtB7_2FnuEp6OutputlNtNtBb_6marker4SyncNtNtNtBb_5panic11unwind_safe13RefUnwindSafeEL_INtB7_6FnOnceuE9call_onceCsjrHSEGnQ3l9_3std
+      at library/core/src/ops/function.rs:287
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    _RINvNvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwind7do_callRDINtNtNtCsgEmfK2I1SDS_4core3ops8function2FnuEp6OutputlNtNtB13_6marker4SyncNtNtNtB13_5panic11unwind_safe13RefUnwindSafeEL_lEB6_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:581
+    _RINvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwindlRDINtNtNtCsgEmfK2I1SDS_4core3ops8function2FnuEp6OutputlNtNtBU_6marker4SyncNtNtNtBU_5panic11unwind_safe13RefUnwindSafeEL_EB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:544
+    _RINvNtCsjrHSEGnQ3l9_3std5panic12catch_unwindRDINtNtNtCsgEmfK2I1SDS_4core3ops8function2FnuEp6OutputlNtNtBP_6marker4SyncNtNtNtBP_5panic11unwind_safe13RefUnwindSafeEL_lEB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panic.rs:359
+    _RNCNvNtCsjrHSEGnQ3l9_3std2rt19lang_start_internal0B5_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:175
+    _RINvNvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwind7do_callNCNvNtB6_2rt19lang_start_internal0iEB6_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:581
+    _RINvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwindiNCNvNtB4_2rt19lang_start_internal0EB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:544
+    _RINvNtCsjrHSEGnQ3l9_3std5panic12catch_unwindNCNvNtB4_2rt19lang_start_internal0iEB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panic.rs:359
+    _RNvNtCsjrHSEGnQ3l9_3std2rt19lang_start_internal
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:171
+    std::rt::lang_start::h5771b3467ac67a7a
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/rt.rs:205
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    main
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+10000 calls with 0B peak consumption from:
+    _RNvMs4_NtCslNYArtu3iFV_5alloc7raw_vecNtB5_11RawVecInner14grow_amortizedCsduwmD7cSIQq_5gimli
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    _RINvNvMs2_NtCslNYArtu3iFV_5alloc7raw_vecINtB8_11RawVecInnerpE7reserve21do_reserve_and_handleNtNtBa_5alloc6GlobalECs4X4t9plMPHF_9addr2line
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    alloc::vec::Vec$LT$T$C$A$GT$::append_elements::hc063ce75554c7d73
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/vec/mod.rs:2879
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    _$LT$alloc..vec..Vec$LT$T$C$A$GT$$u20$as$u20$alloc..vec..spec_extend..SpecExtend$LT$$RF$T$C$core..slice..iter..Iter$LT$T$GT$$GT$$GT$::spec_extend::hb293165f0654e367
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/vec/spec_extend.rs:56
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    alloc::vec::Vec$LT$T$C$A$GT$::extend_from_slice::h7d25f6bfe2936516
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/vec/mod.rs:3500
+    alloc::string::String::push_str::ha239aabce61bdcba
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/string.rs:1102
+    _$LT$T$u20$as$u20$alloc..string..SpecExtendStr$GT$::spec_extend_into::_$u7b$$u7b$closure$u7d$$u7d$::h19fe26ea9c2d44da
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/string.rs:2525
+    core::iter::traits::iterator::Iterator::for_each::call::_$u7b$$u7b$closure$u7d$$u7d$::h76862956a1bf1132
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/iter/traits/iterator.rs:842
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    core::iter::traits::iterator::Iterator::fold::h3b757287ff9449a3
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/iter/traits/iterator.rs:2647
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    core::iter::traits::iterator::Iterator::for_each::hbe20f81ad1785902
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/iter/traits/iterator.rs:845
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    _$LT$T$u20$as$u20$alloc..string..SpecExtendStr$GT$::spec_extend_into::h7145ed1acb7ce9ec
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/string.rs:2525
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    _$LT$alloc..string..String$u20$as$u20$core..iter..traits..collect..Extend$LT$$RF$str$GT$$GT$::extend::hf0ad2628253f7cc7
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/string.rs:2508
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    _$LT$alloc..string..String$u20$as$u20$core..iter..traits..collect..FromIterator$LT$$RF$str$GT$$GT$::from_iter::he9a7196ca130323f
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/string.rs:2389
+    core::iter::traits::iterator::Iterator::collect::hec7ba1790c2f146c
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/iter/traits/iterator.rs:2064
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    broken_app::normalize::h9b2779b741eef085
+      at broken-app/src/lib.rs:13
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    profile_workload::main::h6d731ed102210901
+      at broken-app/src/bin/profile_workload.rs:17
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    core::ops::function::FnOnce::call_once::hfbfdabc8a6ada184
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ops/function.rs:250
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    std::sys::backtrace::__rust_begin_short_backtrace::ha691ec63b1c6f2e7
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/sys/backtrace.rs:166
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    std::rt::lang_start::_$u7b$$u7b$closure$u7d$$u7d$::hc223f18a5fc58463
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/rt.rs:206
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    _RNvXs0_NtNtNtCsgEmfK2I1SDS_4core3ops8function5implsRDINtB7_2FnuEp6OutputlNtNtBb_6marker4SyncNtNtNtBb_5panic11unwind_safe13RefUnwindSafeEL_INtB7_6FnOnceuE9call_onceCsjrHSEGnQ3l9_3std
+      at library/core/src/ops/function.rs:287
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    _RINvNvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwind7do_callRDINtNtNtCsgEmfK2I1SDS_4core3ops8function2FnuEp6OutputlNtNtB13_6marker4SyncNtNtNtB13_5panic11unwind_safe13RefUnwindSafeEL_lEB6_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:581
+    _RINvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwindlRDINtNtNtCsgEmfK2I1SDS_4core3ops8function2FnuEp6OutputlNtNtBU_6marker4SyncNtNtNtBU_5panic11unwind_safe13RefUnwindSafeEL_EB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:544
+    _RINvNtCsjrHSEGnQ3l9_3std5panic12catch_unwindRDINtNtNtCsgEmfK2I1SDS_4core3ops8function2FnuEp6OutputlNtNtBP_6marker4SyncNtNtNtBP_5panic11unwind_safe13RefUnwindSafeEL_lEB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panic.rs:359
+    _RNCNvNtCsjrHSEGnQ3l9_3std2rt19lang_start_internal0B5_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:175
+    _RINvNvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwind7do_callNCNvNtB6_2rt19lang_start_internal0iEB6_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:581
+    _RINvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwindiNCNvNtB4_2rt19lang_start_internal0EB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:544
+    _RINvNtCsjrHSEGnQ3l9_3std5panic12catch_unwindNCNvNtB4_2rt19lang_start_internal0iEB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panic.rs:359
+    _RNvNtCsjrHSEGnQ3l9_3std2rt19lang_start_internal
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:171
+    std::rt::lang_start::h5771b3467ac67a7a
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/rt.rs:205
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    main
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+10000 calls with 0B peak consumption from:
+    _RNvMs4_NtCslNYArtu3iFV_5alloc7raw_vecNtB5_11RawVecInner14grow_amortizedCsduwmD7cSIQq_5gimli
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    alloc::raw_vec::RawVecInner$LT$A$GT$::grow_one::hd18e5d56b3b7e962
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/raw_vec/mod.rs:491
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    alloc::raw_vec::RawVec$LT$T$C$A$GT$::grow_one::h2f55eccf3d6b7e20
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/raw_vec/mod.rs:188
+    alloc::vec::Vec$LT$T$C$A$GT$::push_mut::h32f36b7cd0a6f9a3
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/vec/mod.rs:1029
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    alloc::vec::Vec$LT$T$C$A$GT$::push::h434d93cdb544946e
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/vec/mod.rs:992
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    broken_app::algo::slow_dedup::h3bfb094e1a710cd0
+      at broken-app/src/algo.rs:14
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    profile_workload::main::h6d731ed102210901
+      at broken-app/src/bin/profile_workload.rs:20
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    core::ops::function::FnOnce::call_once::hfbfdabc8a6ada184
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ops/function.rs:250
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    std::sys::backtrace::__rust_begin_short_backtrace::ha691ec63b1c6f2e7
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/sys/backtrace.rs:166
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    std::rt::lang_start::_$u7b$$u7b$closure$u7d$$u7d$::hc223f18a5fc58463
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/rt.rs:206
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    _RNvXs0_NtNtNtCsgEmfK2I1SDS_4core3ops8function5implsRDINtB7_2FnuEp6OutputlNtNtBb_6marker4SyncNtNtNtBb_5panic11unwind_safe13RefUnwindSafeEL_INtB7_6FnOnceuE9call_onceCsjrHSEGnQ3l9_3std
+      at library/core/src/ops/function.rs:287
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    _RINvNvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwind7do_callRDINtNtNtCsgEmfK2I1SDS_4core3ops8function2FnuEp6OutputlNtNtB13_6marker4SyncNtNtNtB13_5panic11unwind_safe13RefUnwindSafeEL_lEB6_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:581
+    _RINvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwindlRDINtNtNtCsgEmfK2I1SDS_4core3ops8function2FnuEp6OutputlNtNtBU_6marker4SyncNtNtNtBU_5panic11unwind_safe13RefUnwindSafeEL_EB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:544
+    _RINvNtCsjrHSEGnQ3l9_3std5panic12catch_unwindRDINtNtNtCsgEmfK2I1SDS_4core3ops8function2FnuEp6OutputlNtNtBP_6marker4SyncNtNtNtBP_5panic11unwind_safe13RefUnwindSafeEL_lEB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panic.rs:359
+    _RNCNvNtCsjrHSEGnQ3l9_3std2rt19lang_start_internal0B5_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:175
+    _RINvNvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwind7do_callNCNvNtB6_2rt19lang_start_internal0iEB6_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:581
+    _RINvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwindiNCNvNtB4_2rt19lang_start_internal0EB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:544
+    _RINvNtCsjrHSEGnQ3l9_3std5panic12catch_unwindNCNvNtB4_2rt19lang_start_internal0iEB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panic.rs:359
+    _RNvNtCsjrHSEGnQ3l9_3std2rt19lang_start_internal
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:171
+    std::rt::lang_start::h5771b3467ac67a7a
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/rt.rs:205
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    main
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+10000 calls with 0B peak consumption from:
+    _RNvMs4_NtCslNYArtu3iFV_5alloc7raw_vecNtB5_11RawVecInner14grow_amortizedCsduwmD7cSIQq_5gimli
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    alloc::raw_vec::RawVecInner$LT$A$GT$::grow_one::hd18e5d56b3b7e962
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/raw_vec/mod.rs:491
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    alloc::raw_vec::RawVec$LT$T$C$A$GT$::grow_one::h2f55eccf3d6b7e20
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/raw_vec/mod.rs:188
+    alloc::vec::Vec$LT$T$C$A$GT$::push_mut::h32f36b7cd0a6f9a3
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/vec/mod.rs:1029
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    alloc::vec::Vec$LT$T$C$A$GT$::push::h434d93cdb544946e
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/vec/mod.rs:992
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    broken_app::algo::slow_dedup::h3bfb094e1a710cd0
+      at broken-app/src/algo.rs:14
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    profile_workload::main::h6d731ed102210901
+      at broken-app/src/bin/profile_workload.rs:20
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    core::ops::function::FnOnce::call_once::hfbfdabc8a6ada184
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ops/function.rs:250
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    std::sys::backtrace::__rust_begin_short_backtrace::ha691ec63b1c6f2e7
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/sys/backtrace.rs:166
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    std::rt::lang_start::_$u7b$$u7b$closure$u7d$$u7d$::hc223f18a5fc58463
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/rt.rs:206
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    _RNvXs0_NtNtNtCsgEmfK2I1SDS_4core3ops8function5implsRDINtB7_2FnuEp6OutputlNtNtBb_6marker4SyncNtNtNtBb_5panic11unwind_safe13RefUnwindSafeEL_INtB7_6FnOnceuE9call_onceCsjrHSEGnQ3l9_3std
+      at library/core/src/ops/function.rs:287
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    _RINvNvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwind7do_callRDINtNtNtCsgEmfK2I1SDS_4core3ops8function2FnuEp6OutputlNtNtB13_6marker4SyncNtNtNtB13_5panic11unwind_safe13RefUnwindSafeEL_lEB6_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:581
+    _RINvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwindlRDINtNtNtCsgEmfK2I1SDS_4core3ops8function2FnuEp6OutputlNtNtBU_6marker4SyncNtNtNtBU_5panic11unwind_safe13RefUnwindSafeEL_EB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:544
+    _RINvNtCsjrHSEGnQ3l9_3std5panic12catch_unwindRDINtNtNtCsgEmfK2I1SDS_4core3ops8function2FnuEp6OutputlNtNtBP_6marker4SyncNtNtNtBP_5panic11unwind_safe13RefUnwindSafeEL_lEB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panic.rs:359
+    _RNCNvNtCsjrHSEGnQ3l9_3std2rt19lang_start_internal0B5_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:175
+    _RINvNvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwind7do_callNCNvNtB6_2rt19lang_start_internal0iEB6_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:581
+    _RINvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwindiNCNvNtB4_2rt19lang_start_internal0EB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:544
+    _RINvNtCsjrHSEGnQ3l9_3std5panic12catch_unwindNCNvNtB4_2rt19lang_start_internal0iEB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panic.rs:359
+    _RNvNtCsjrHSEGnQ3l9_3std2rt19lang_start_internal
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:171
+    std::rt::lang_start::h5771b3467ac67a7a
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/rt.rs:205
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    main
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+
+10002 calls to allocation functions with 0B peak consumption from
+_RNvNtCslNYArtu3iFV_5alloc5alloc5alloc
+  at library/alloc/src/alloc.rs:95
+  in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+_RNvMNtCslNYArtu3iFV_5alloc5allocNtB2_6Global18alloc_impl_runtime
+  at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/alloc/src/alloc.rs:190
+_RNvMNtCslNYArtu3iFV_5alloc5allocNtB2_6Global10alloc_impl
+  at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/alloc/src/alloc.rs:312
+_RNvXs_NtCslNYArtu3iFV_5alloc5allocNtB4_6GlobalNtNtCsgEmfK2I1SDS_4core5alloc9Allocator8allocate
+  at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/alloc/src/alloc.rs:429
+_RNvMs1_NtCslNYArtu3iFV_5alloc5boxedINtB5_3BoxeE21try_clone_from_ref_inCsjrHSEGnQ3l9_3std
+  at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/alloc/src/boxed.rs:872
+_RNvMs1_NtCslNYArtu3iFV_5alloc5boxedINtB5_3BoxeE17clone_from_ref_inCsjrHSEGnQ3l9_3std
+  at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/alloc/src/boxed.rs:831
+_RNvMs0_NtCslNYArtu3iFV_5alloc5boxedINtB5_3BoxeE14clone_from_refCsjrHSEGnQ3l9_3std
+  at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/alloc/src/boxed.rs:784
+_RNvXs3_NtNtCslNYArtu3iFV_5alloc5boxed7convertINtB7_3BoxeEINtNtCsgEmfK2I1SDS_4core7convert4FromReE4from
+  at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/alloc/src/boxed/convert.rs:138
+_RNvYNvYINtNtCslNYArtu3iFV_5alloc5boxed3BoxeEINtNtCsgEmfK2I1SDS_4core7convert4FromReE4fromINtNtNtBL_3ops8function6FnOnceTB1h_EE9call_onceCsjrHSEGnQ3l9_3std
+  at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/core/src/ops/function.rs:250
+_RINvMNtCsgEmfK2I1SDS_4core6optionINtB3_6OptionReE3mapINtNtCslNYArtu3iFV_5alloc5boxed3BoxeENvYBP_INtNtB5_7convert4FromBI_E4fromECsjrHSEGnQ3l9_3std
+  at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/core/src/option.rs:1165
+_RNCNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow11thread_info16set_current_info0Bd_
+  at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/stack_overflow/thread_info.rs:114
+_RNCINvNtNtCsjrHSEGnQ3l9_3std6thread7current17with_current_nameNCNvNtNtNtNtNtB8_3sys3pal4unix14stack_overflow11thread_info16set_current_info0INtNtCsgEmfK2I1SDS_4core6option6OptionINtNtCslNYArtu3iFV_5alloc5boxed3BoxeEEE0B8_
+  at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/thread/current.rs:234
+_RINvNtNtCsjrHSEGnQ3l9_3std6thread7current16try_with_currentNCINvB2_17with_current_nameNCNvNtNtNtNtNtB6_3sys3pal4unix14stack_overflow11thread_info16set_current_info0INtNtCsgEmfK2I1SDS_4core6option6OptionINtNtCslNYArtu3iFV_5alloc5boxed3BoxeEEE0B2C_EB6_
+  at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/thread/current.rs:204
+_RINvNtNtCsjrHSEGnQ3l9_3std6thread7current17with_current_nameNCNvNtNtNtNtNtB6_3sys3pal4unix14stack_overflow11thread_info16set_current_info0INtNtCsgEmfK2I1SDS_4core6option6OptionINtNtCslNYArtu3iFV_5alloc5boxed3BoxeEEEB6_
+  at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/thread/current.rs:216
+_RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow11thread_info16set_current_info
+  at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/stack_overflow/thread_info.rs:114
+10000 calls with 0B peak consumption from:
+    broken_app::normalize::h9b2779b741eef085
+      at broken-app/src/lib.rs:13
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    profile_workload::main::h6d731ed102210901
+      at broken-app/src/bin/profile_workload.rs:17
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    core::ops::function::FnOnce::call_once::hfbfdabc8a6ada184
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ops/function.rs:250
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    std::sys::backtrace::__rust_begin_short_backtrace::ha691ec63b1c6f2e7
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/sys/backtrace.rs:166
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    std::rt::lang_start::_$u7b$$u7b$closure$u7d$$u7d$::hc223f18a5fc58463
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/rt.rs:206
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    _RNvXs0_NtNtNtCsgEmfK2I1SDS_4core3ops8function5implsRDINtB7_2FnuEp6OutputlNtNtBb_6marker4SyncNtNtNtBb_5panic11unwind_safe13RefUnwindSafeEL_INtB7_6FnOnceuE9call_onceCsjrHSEGnQ3l9_3std
+      at library/core/src/ops/function.rs:287
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    _RINvNvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwind7do_callRDINtNtNtCsgEmfK2I1SDS_4core3ops8function2FnuEp6OutputlNtNtB13_6marker4SyncNtNtNtB13_5panic11unwind_safe13RefUnwindSafeEL_lEB6_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:581
+    _RINvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwindlRDINtNtNtCsgEmfK2I1SDS_4core3ops8function2FnuEp6OutputlNtNtBU_6marker4SyncNtNtNtBU_5panic11unwind_safe13RefUnwindSafeEL_EB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:544
+    _RINvNtCsjrHSEGnQ3l9_3std5panic12catch_unwindRDINtNtNtCsgEmfK2I1SDS_4core3ops8function2FnuEp6OutputlNtNtBP_6marker4SyncNtNtNtBP_5panic11unwind_safe13RefUnwindSafeEL_lEB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panic.rs:359
+    _RNCNvNtCsjrHSEGnQ3l9_3std2rt19lang_start_internal0B5_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:175
+    _RINvNvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwind7do_callNCNvNtB6_2rt19lang_start_internal0iEB6_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:581
+    _RINvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwindiNCNvNtB4_2rt19lang_start_internal0EB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:544
+    _RINvNtCsjrHSEGnQ3l9_3std5panic12catch_unwindNCNvNtB4_2rt19lang_start_internal0iEB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panic.rs:359
+    _RNvNtCsjrHSEGnQ3l9_3std2rt19lang_start_internal
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:171
+    std::rt::lang_start::h5771b3467ac67a7a
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/rt.rs:205
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    main
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+1 calls with 0B peak consumption from:
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp4init
+      at library/std/src/sys/pal/unix/stack_overflow.rs:179
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    _RNvNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix4init
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/mod.rs:41
+    _RNvNtCsjrHSEGnQ3l9_3std2rt4init
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:118
+    _RNCNvNtCsjrHSEGnQ3l9_3std2rt19lang_start_internal0B5_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:173
+    _RINvNvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwind7do_callNCNvNtB6_2rt19lang_start_internal0iEB6_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:581
+    _RINvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwindiNCNvNtB4_2rt19lang_start_internal0EB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:544
+    _RINvNtCsjrHSEGnQ3l9_3std5panic12catch_unwindNCNvNtB4_2rt19lang_start_internal0iEB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panic.rs:359
+    _RNvNtCsjrHSEGnQ3l9_3std2rt19lang_start_internal
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:171
+    std::rt::lang_start::h5771b3467ac67a7a
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/rt.rs:205
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    main
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+1 calls with 0B peak consumption from:
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp4init
+      at library/std/src/sys/pal/unix/stack_overflow.rs:179
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    _RNvNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix4init
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/mod.rs:41
+    _RNvNtCsjrHSEGnQ3l9_3std2rt4init
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:118
+    _RNCNvNtCsjrHSEGnQ3l9_3std2rt19lang_start_internal0B5_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:173
+    _RINvNvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwind7do_callNCNvNtB6_2rt19lang_start_internal0iEB6_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:581
+    _RINvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwindiNCNvNtB4_2rt19lang_start_internal0EB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:544
+    _RINvNtCsjrHSEGnQ3l9_3std5panic12catch_unwindNCNvNtB4_2rt19lang_start_internal0iEB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panic.rs:359
+    _RNvNtCsjrHSEGnQ3l9_3std2rt19lang_start_internal
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:171
+    std::rt::lang_start::h5771b3467ac67a7a
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/rt.rs:205
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    main
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+
+10000 calls to allocation functions with 0B peak consumption from
+alloc::alloc::alloc::hb859f6d8b52996e3
+  at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/alloc.rs:95
+  in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+alloc::alloc::Global::alloc_impl_runtime::ha0958bedbf5e08de
+  at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/alloc.rs:190
+10000 calls with 0B peak consumption from:
+    alloc::alloc::Global::alloc_impl::h33a61c683fbfd5c7
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/alloc.rs:312
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    _$LT$alloc..alloc..Global$u20$as$u20$core..alloc..Allocator$GT$::allocate::h786fdf9bed797f88
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/alloc.rs:429
+    alloc::boxed::box_new_uninit::h9a5f81ff92e6c80b
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/boxed.rs:248
+    alloc::boxed::Box$LT$T$GT$::new_uninit::hc626e736818f8af2
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/boxed.rs:317
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    profile_workload::main::h6d731ed102210901
+      at /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/broken-app/src/bin/profile_workload.rs:19
+    core::ops::function::FnOnce::call_once::hfbfdabc8a6ada184
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ops/function.rs:250
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    std::sys::backtrace::__rust_begin_short_backtrace::ha691ec63b1c6f2e7
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/sys/backtrace.rs:166
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    std::rt::lang_start::_$u7b$$u7b$closure$u7d$$u7d$::hc223f18a5fc58463
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/rt.rs:206
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    _RNvXs0_NtNtNtCsgEmfK2I1SDS_4core3ops8function5implsRDINtB7_2FnuEp6OutputlNtNtBb_6marker4SyncNtNtNtBb_5panic11unwind_safe13RefUnwindSafeEL_INtB7_6FnOnceuE9call_onceCsjrHSEGnQ3l9_3std
+      at library/core/src/ops/function.rs:287
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    _RINvNvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwind7do_callRDINtNtNtCsgEmfK2I1SDS_4core3ops8function2FnuEp6OutputlNtNtB13_6marker4SyncNtNtNtB13_5panic11unwind_safe13RefUnwindSafeEL_lEB6_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:581
+    _RINvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwindlRDINtNtNtCsgEmfK2I1SDS_4core3ops8function2FnuEp6OutputlNtNtBU_6marker4SyncNtNtNtBU_5panic11unwind_safe13RefUnwindSafeEL_EB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:544
+    _RINvNtCsjrHSEGnQ3l9_3std5panic12catch_unwindRDINtNtNtCsgEmfK2I1SDS_4core3ops8function2FnuEp6OutputlNtNtBP_6marker4SyncNtNtNtBP_5panic11unwind_safe13RefUnwindSafeEL_lEB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panic.rs:359
+    _RNCNvNtCsjrHSEGnQ3l9_3std2rt19lang_start_internal0B5_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:175
+    _RINvNvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwind7do_callNCNvNtB6_2rt19lang_start_internal0iEB6_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:581
+    _RINvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwindiNCNvNtB4_2rt19lang_start_internal0EB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:544
+    _RINvNtCsjrHSEGnQ3l9_3std5panic12catch_unwindNCNvNtB4_2rt19lang_start_internal0iEB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panic.rs:359
+    _RNvNtCsjrHSEGnQ3l9_3std2rt19lang_start_internal
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:171
+    std::rt::lang_start::h5771b3467ac67a7a
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/rt.rs:205
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    main
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+
+1 calls to allocation functions with 0B peak consumption from
+__pthread_getattr_np
+  at ./nptl/pthread_getattr_np.c:180
+  in /lib/x86_64-linux-gnu/libc.so.6
+1 calls with 0B peak consumption from:
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp15get_stack_start
+      at library/std/src/sys/pal/unix/stack_overflow.rs:372
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp19stack_start_aligned
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/stack_overflow.rs:389
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp24install_main_guard_linux
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/stack_overflow.rs:442
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp18install_main_guard
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/stack_overflow.rs:413
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp4init
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/stack_overflow.rs:155
+    _RNvNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix4init
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/mod.rs:41
+    _RNvNtCsjrHSEGnQ3l9_3std2rt4init
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:118
+    _RNCNvNtCsjrHSEGnQ3l9_3std2rt19lang_start_internal0B5_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:173
+    _RINvNvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwind7do_callNCNvNtB6_2rt19lang_start_internal0iEB6_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:581
+    _RINvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwindiNCNvNtB4_2rt19lang_start_internal0EB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:544
+    _RINvNtCsjrHSEGnQ3l9_3std5panic12catch_unwindNCNvNtB4_2rt19lang_start_internal0iEB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panic.rs:359
+    _RNvNtCsjrHSEGnQ3l9_3std2rt19lang_start_internal
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:171
+    std::rt::lang_start::h5771b3467ac67a7a
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/rt.rs:205
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    main
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+
+1 calls to allocation functions with 472B peak consumption from
+_IO_new_fopen::__fopen_internal
+  at ./libio/iofopen.c:65
+  in /lib/x86_64-linux-gnu/libc.so.6
+_IO_new_fopen
+  at ./libio/./libio/iofopen.c:86
+1 calls with 472B peak consumption from:
+    __pthread_getattr_np
+      at ./nptl/pthread_getattr_np.c:85
+      in /lib/x86_64-linux-gnu/libc.so.6
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp15get_stack_start
+      at library/std/src/sys/pal/unix/stack_overflow.rs:372
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp19stack_start_aligned
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/stack_overflow.rs:389
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp24install_main_guard_linux
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/stack_overflow.rs:442
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp18install_main_guard
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/stack_overflow.rs:413
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp4init
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/stack_overflow.rs:155
+    _RNvNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix4init
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/mod.rs:41
+    _RNvNtCsjrHSEGnQ3l9_3std2rt4init
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:118
+    _RNCNvNtCsjrHSEGnQ3l9_3std2rt19lang_start_internal0B5_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:173
+    _RINvNvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwind7do_callNCNvNtB6_2rt19lang_start_internal0iEB6_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:581
+    _RINvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwindiNCNvNtB4_2rt19lang_start_internal0EB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:544
+    _RINvNtCsjrHSEGnQ3l9_3std5panic12catch_unwindNCNvNtB4_2rt19lang_start_internal0iEB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panic.rs:359
+    _RNvNtCsjrHSEGnQ3l9_3std2rt19lang_start_internal
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:171
+    std::rt::lang_start::h5771b3467ac67a7a
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/rt.rs:205
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    main
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+
+1 calls to allocation functions with 0B peak consumption from
+__GI___getdelim
+  at ./libio/iogetdelim.c:65
+  in /lib/x86_64-linux-gnu/libc.so.6
+1 calls with 0B peak consumption from:
+    __pthread_getattr_np
+      at ./nptl/pthread_getattr_np.c:122
+      in /lib/x86_64-linux-gnu/libc.so.6
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp15get_stack_start
+      at library/std/src/sys/pal/unix/stack_overflow.rs:372
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp19stack_start_aligned
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/stack_overflow.rs:389
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp24install_main_guard_linux
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/stack_overflow.rs:442
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp18install_main_guard
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/stack_overflow.rs:413
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp4init
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/stack_overflow.rs:155
+    _RNvNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix4init
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/mod.rs:41
+    _RNvNtCsjrHSEGnQ3l9_3std2rt4init
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:118
+    _RNCNvNtCsjrHSEGnQ3l9_3std2rt19lang_start_internal0B5_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:173
+    _RINvNvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwind7do_callNCNvNtB6_2rt19lang_start_internal0iEB6_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:581
+    _RINvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwindiNCNvNtB4_2rt19lang_start_internal0EB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:544
+    _RINvNtCsjrHSEGnQ3l9_3std5panic12catch_unwindNCNvNtB4_2rt19lang_start_internal0iEB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panic.rs:359
+    _RNvNtCsjrHSEGnQ3l9_3std2rt19lang_start_internal
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:171
+    std::rt::lang_start::h5771b3467ac67a7a
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/rt.rs:205
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    main
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+
+1 calls to allocation functions with 240B peak consumption from
+__GI___getdelim
+  at ./libio/iogetdelim.c:107
+  in /lib/x86_64-linux-gnu/libc.so.6
+1 calls with 240B peak consumption from:
+    __pthread_getattr_np
+      at ./nptl/pthread_getattr_np.c:122
+      in /lib/x86_64-linux-gnu/libc.so.6
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp15get_stack_start
+      at library/std/src/sys/pal/unix/stack_overflow.rs:372
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp19stack_start_aligned
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/stack_overflow.rs:389
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp24install_main_guard_linux
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/stack_overflow.rs:442
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp18install_main_guard
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/stack_overflow.rs:413
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp4init
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/stack_overflow.rs:155
+    _RNvNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix4init
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/mod.rs:41
+    _RNvNtCsjrHSEGnQ3l9_3std2rt4init
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:118
+    _RNCNvNtCsjrHSEGnQ3l9_3std2rt19lang_start_internal0B5_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:173
+    _RINvNvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwind7do_callNCNvNtB6_2rt19lang_start_internal0iEB6_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:581
+    _RINvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwindiNCNvNtB4_2rt19lang_start_internal0EB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:544
+    _RINvNtCsjrHSEGnQ3l9_3std5panic12catch_unwindNCNvNtB4_2rt19lang_start_internal0iEB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panic.rs:359
+    _RNvNtCsjrHSEGnQ3l9_3std2rt19lang_start_internal
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:171
+    std::rt::lang_start::h5771b3467ac67a7a
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/rt.rs:205
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    main
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+
+1 calls to allocation functions with 1.02K peak consumption from
+__GI__IO_file_doallocate
+  at ./libio/filedoalloc.c:101
+  in /lib/x86_64-linux-gnu/libc.so.6
+1 calls with 1.02K peak consumption from:
+    __GI__IO_doallocbuf
+      at ./libio/genops.c:347
+      in /lib/x86_64-linux-gnu/libc.so.6
+    _IO_new_file_underflow
+      at ./libio/fileops.c:486
+      in /lib/x86_64-linux-gnu/libc.so.6
+    __GI___getdelim
+      at ./libio/iogetdelim.c:77
+      in /lib/x86_64-linux-gnu/libc.so.6
+    __pthread_getattr_np
+      at ./nptl/pthread_getattr_np.c:122
+      in /lib/x86_64-linux-gnu/libc.so.6
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp15get_stack_start
+      at library/std/src/sys/pal/unix/stack_overflow.rs:372
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp19stack_start_aligned
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/stack_overflow.rs:389
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp24install_main_guard_linux
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/stack_overflow.rs:442
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp18install_main_guard
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/stack_overflow.rs:413
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp4init
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/stack_overflow.rs:155
+    _RNvNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix4init
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/mod.rs:41
+    _RNvNtCsjrHSEGnQ3l9_3std2rt4init
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:118
+    _RNCNvNtCsjrHSEGnQ3l9_3std2rt19lang_start_internal0B5_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:173
+    _RINvNvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwind7do_callNCNvNtB6_2rt19lang_start_internal0iEB6_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:581
+    _RINvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwindiNCNvNtB4_2rt19lang_start_internal0EB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:544
+    _RINvNtCsjrHSEGnQ3l9_3std5panic12catch_unwindNCNvNtB4_2rt19lang_start_internal0iEB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panic.rs:359
+    _RNvNtCsjrHSEGnQ3l9_3std2rt19lang_start_internal
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:171
+    std::rt::lang_start::h5771b3467ac67a7a
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/rt.rs:205
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    main
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+
+1 calls to allocation functions with 0B peak consumption from
+__GI___pthread_attr_setaffinity_np
+  at ./nptl/pthread_attr_setaffinity.c:51
+  in /lib/x86_64-linux-gnu/libc.so.6
+1 calls with 0B peak consumption from:
+    __pthread_getattr_np
+      at ./nptl/pthread_getattr_np.c:194
+      in /lib/x86_64-linux-gnu/libc.so.6
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp15get_stack_start
+      at library/std/src/sys/pal/unix/stack_overflow.rs:372
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp19stack_start_aligned
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/stack_overflow.rs:389
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp24install_main_guard_linux
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/stack_overflow.rs:442
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp18install_main_guard
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/stack_overflow.rs:413
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp4init
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/stack_overflow.rs:155
+    _RNvNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix4init
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/mod.rs:41
+    _RNvNtCsjrHSEGnQ3l9_3std2rt4init
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:118
+    _RNCNvNtCsjrHSEGnQ3l9_3std2rt19lang_start_internal0B5_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:173
+    _RINvNvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwind7do_callNCNvNtB6_2rt19lang_start_internal0iEB6_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:581
+    _RINvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwindiNCNvNtB4_2rt19lang_start_internal0EB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:544
+    _RINvNtCsjrHSEGnQ3l9_3std5panic12catch_unwindNCNvNtB4_2rt19lang_start_internal0iEB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panic.rs:359
+    _RNvNtCsjrHSEGnQ3l9_3std2rt19lang_start_internal
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:171
+    std::rt::lang_start::h5771b3467ac67a7a
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/rt.rs:205
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    main
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+
+1 calls to allocation functions with 0B peak consumption from
+__pthread_attr_extension
+  at ./nptl/pthread_attr_extension.c:28
+  in /lib/x86_64-linux-gnu/libc.so.6
+1 calls with 0B peak consumption from:
+    __GI___pthread_attr_setaffinity_np
+      at ./nptl/pthread_attr_setaffinity.c:45
+      in /lib/x86_64-linux-gnu/libc.so.6
+    __pthread_getattr_np
+      at ./nptl/pthread_getattr_np.c:194
+      in /lib/x86_64-linux-gnu/libc.so.6
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp15get_stack_start
+      at library/std/src/sys/pal/unix/stack_overflow.rs:372
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp19stack_start_aligned
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/stack_overflow.rs:389
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp24install_main_guard_linux
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/stack_overflow.rs:442
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp18install_main_guard
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/stack_overflow.rs:413
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp4init
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/stack_overflow.rs:155
+    _RNvNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix4init
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/mod.rs:41
+    _RNvNtCsjrHSEGnQ3l9_3std2rt4init
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:118
+    _RNCNvNtCsjrHSEGnQ3l9_3std2rt19lang_start_internal0B5_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:173
+    _RINvNvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwind7do_callNCNvNtB6_2rt19lang_start_internal0iEB6_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:581
+    _RINvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwindiNCNvNtB4_2rt19lang_start_internal0EB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:544
+    _RINvNtCsjrHSEGnQ3l9_3std5panic12catch_unwindNCNvNtB4_2rt19lang_start_internal0iEB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panic.rs:359
+    _RNvNtCsjrHSEGnQ3l9_3std2rt19lang_start_internal
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:171
+    std::rt::lang_start::h5771b3467ac67a7a
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/rt.rs:205
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    main
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+
+
+PEAK MEMORY CONSUMERS
+73.73K peak memory consumed over 1 calls from
+0x765aaa8b738e
+  in /lib/x86_64-linux-gnu/libstdc++.so.6
+73.73K consumed over 1 calls from:
+    call_init
+      at ./elf/dl-init.c:74
+      in /lib64/ld-linux-x86-64.so.2
+    _dl_init::call_init
+      at ./elf/dl-init.c:120
+      in /lib64/ld-linux-x86-64.so.2
+    _dl_init
+      at ./elf/./elf/dl-init.c:121
+    _dl_start_user
+      in /lib64/ld-linux-x86-64.so.2
+
+1.02K peak memory consumed over 1 calls from
+__GI__IO_file_doallocate
+  at ./libio/filedoalloc.c:101
+  in /lib/x86_64-linux-gnu/libc.so.6
+1.02K consumed over 1 calls from:
+    __GI__IO_doallocbuf
+      at ./libio/genops.c:347
+      in /lib/x86_64-linux-gnu/libc.so.6
+    _IO_new_file_underflow
+      at ./libio/fileops.c:486
+      in /lib/x86_64-linux-gnu/libc.so.6
+    __GI___getdelim
+      at ./libio/iogetdelim.c:77
+      in /lib/x86_64-linux-gnu/libc.so.6
+    __pthread_getattr_np
+      at ./nptl/pthread_getattr_np.c:122
+      in /lib/x86_64-linux-gnu/libc.so.6
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp15get_stack_start
+      at library/std/src/sys/pal/unix/stack_overflow.rs:372
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp19stack_start_aligned
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/stack_overflow.rs:389
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp24install_main_guard_linux
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/stack_overflow.rs:442
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp18install_main_guard
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/stack_overflow.rs:413
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp4init
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/stack_overflow.rs:155
+    _RNvNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix4init
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/mod.rs:41
+    _RNvNtCsjrHSEGnQ3l9_3std2rt4init
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:118
+    _RNCNvNtCsjrHSEGnQ3l9_3std2rt19lang_start_internal0B5_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:173
+    _RINvNvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwind7do_callNCNvNtB6_2rt19lang_start_internal0iEB6_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:581
+    _RINvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwindiNCNvNtB4_2rt19lang_start_internal0EB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:544
+    _RINvNtCsjrHSEGnQ3l9_3std5panic12catch_unwindNCNvNtB4_2rt19lang_start_internal0iEB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panic.rs:359
+    _RNvNtCsjrHSEGnQ3l9_3std2rt19lang_start_internal
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:171
+    std::rt::lang_start::h5771b3467ac67a7a
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/rt.rs:205
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    main
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+
+472B peak memory consumed over 1 calls from
+_IO_new_fopen::__fopen_internal
+  at ./libio/iofopen.c:65
+  in /lib/x86_64-linux-gnu/libc.so.6
+_IO_new_fopen
+  at ./libio/./libio/iofopen.c:86
+472B consumed over 1 calls from:
+    __pthread_getattr_np
+      at ./nptl/pthread_getattr_np.c:85
+      in /lib/x86_64-linux-gnu/libc.so.6
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp15get_stack_start
+      at library/std/src/sys/pal/unix/stack_overflow.rs:372
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp19stack_start_aligned
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/stack_overflow.rs:389
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp24install_main_guard_linux
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/stack_overflow.rs:442
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp18install_main_guard
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/stack_overflow.rs:413
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp4init
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/stack_overflow.rs:155
+    _RNvNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix4init
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/mod.rs:41
+    _RNvNtCsjrHSEGnQ3l9_3std2rt4init
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:118
+    _RNCNvNtCsjrHSEGnQ3l9_3std2rt19lang_start_internal0B5_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:173
+    _RINvNvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwind7do_callNCNvNtB6_2rt19lang_start_internal0iEB6_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:581
+    _RINvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwindiNCNvNtB4_2rt19lang_start_internal0EB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:544
+    _RINvNtCsjrHSEGnQ3l9_3std5panic12catch_unwindNCNvNtB4_2rt19lang_start_internal0iEB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panic.rs:359
+    _RNvNtCsjrHSEGnQ3l9_3std2rt19lang_start_internal
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:171
+    std::rt::lang_start::h5771b3467ac67a7a
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/rt.rs:205
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    main
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+
+240B peak memory consumed over 1 calls from
+__GI___getdelim
+  at ./libio/iogetdelim.c:107
+  in /lib/x86_64-linux-gnu/libc.so.6
+240B consumed over 1 calls from:
+    __pthread_getattr_np
+      at ./nptl/pthread_getattr_np.c:122
+      in /lib/x86_64-linux-gnu/libc.so.6
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp15get_stack_start
+      at library/std/src/sys/pal/unix/stack_overflow.rs:372
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp19stack_start_aligned
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/stack_overflow.rs:389
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp24install_main_guard_linux
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/stack_overflow.rs:442
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp18install_main_guard
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/stack_overflow.rs:413
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp4init
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/stack_overflow.rs:155
+    _RNvNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix4init
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/mod.rs:41
+    _RNvNtCsjrHSEGnQ3l9_3std2rt4init
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:118
+    _RNCNvNtCsjrHSEGnQ3l9_3std2rt19lang_start_internal0B5_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:173
+    _RINvNvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwind7do_callNCNvNtB6_2rt19lang_start_internal0iEB6_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:581
+    _RINvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwindiNCNvNtB4_2rt19lang_start_internal0EB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:544
+    _RINvNtCsjrHSEGnQ3l9_3std5panic12catch_unwindNCNvNtB4_2rt19lang_start_internal0iEB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panic.rs:359
+    _RNvNtCsjrHSEGnQ3l9_3std2rt19lang_start_internal
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:171
+    std::rt::lang_start::h5771b3467ac67a7a
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/rt.rs:205
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    main
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+
+
+MOST TEMPORARY ALLOCATIONS
+30000 temporary allocations of 40000 allocations in total (75.00%) from
+_RNvMs4_NtCslNYArtu3iFV_5alloc7raw_vecNtB5_11RawVecInner11finish_growCsduwmD7cSIQq_5gimli
+  in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+10000 temporary allocations of 10000 allocations in total (100.00%) from:
+    _RNvMs4_NtCslNYArtu3iFV_5alloc7raw_vecNtB5_11RawVecInner14grow_amortizedCsduwmD7cSIQq_5gimli
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    _RINvNvMs2_NtCslNYArtu3iFV_5alloc7raw_vecINtB8_11RawVecInnerpE7reserve21do_reserve_and_handleNtNtBa_5alloc6GlobalECs4X4t9plMPHF_9addr2line
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    alloc::vec::Vec$LT$T$C$A$GT$::append_elements::hc063ce75554c7d73
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/vec/mod.rs:2879
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    _$LT$alloc..vec..Vec$LT$T$C$A$GT$$u20$as$u20$alloc..vec..spec_extend..SpecExtend$LT$$RF$T$C$core..slice..iter..Iter$LT$T$GT$$GT$$GT$::spec_extend::hb293165f0654e367
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/vec/spec_extend.rs:56
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    alloc::vec::Vec$LT$T$C$A$GT$::extend_from_slice::h7d25f6bfe2936516
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/vec/mod.rs:3500
+    alloc::string::String::push_str::ha239aabce61bdcba
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/string.rs:1102
+    _$LT$T$u20$as$u20$alloc..string..SpecExtendStr$GT$::spec_extend_into::_$u7b$$u7b$closure$u7d$$u7d$::h19fe26ea9c2d44da
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/string.rs:2525
+    core::iter::traits::iterator::Iterator::for_each::call::_$u7b$$u7b$closure$u7d$$u7d$::h76862956a1bf1132
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/iter/traits/iterator.rs:842
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    core::iter::traits::iterator::Iterator::fold::h3b757287ff9449a3
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/iter/traits/iterator.rs:2647
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    core::iter::traits::iterator::Iterator::for_each::hbe20f81ad1785902
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/iter/traits/iterator.rs:845
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    _$LT$T$u20$as$u20$alloc..string..SpecExtendStr$GT$::spec_extend_into::h7145ed1acb7ce9ec
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/string.rs:2525
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    _$LT$alloc..string..String$u20$as$u20$core..iter..traits..collect..Extend$LT$$RF$str$GT$$GT$::extend::hf0ad2628253f7cc7
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/string.rs:2508
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    _$LT$alloc..string..String$u20$as$u20$core..iter..traits..collect..FromIterator$LT$$RF$str$GT$$GT$::from_iter::he9a7196ca130323f
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/string.rs:2389
+    core::iter::traits::iterator::Iterator::collect::hec7ba1790c2f146c
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/iter/traits/iterator.rs:2064
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    broken_app::normalize::h9b2779b741eef085
+      at broken-app/src/lib.rs:13
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    profile_workload::main::h6d731ed102210901
+      at broken-app/src/bin/profile_workload.rs:17
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    core::ops::function::FnOnce::call_once::hfbfdabc8a6ada184
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ops/function.rs:250
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    std::sys::backtrace::__rust_begin_short_backtrace::ha691ec63b1c6f2e7
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/sys/backtrace.rs:166
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    std::rt::lang_start::_$u7b$$u7b$closure$u7d$$u7d$::hc223f18a5fc58463
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/rt.rs:206
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    _RNvXs0_NtNtNtCsgEmfK2I1SDS_4core3ops8function5implsRDINtB7_2FnuEp6OutputlNtNtBb_6marker4SyncNtNtNtBb_5panic11unwind_safe13RefUnwindSafeEL_INtB7_6FnOnceuE9call_onceCsjrHSEGnQ3l9_3std
+      at library/core/src/ops/function.rs:287
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    _RINvNvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwind7do_callRDINtNtNtCsgEmfK2I1SDS_4core3ops8function2FnuEp6OutputlNtNtB13_6marker4SyncNtNtNtB13_5panic11unwind_safe13RefUnwindSafeEL_lEB6_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:581
+    _RINvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwindlRDINtNtNtCsgEmfK2I1SDS_4core3ops8function2FnuEp6OutputlNtNtBU_6marker4SyncNtNtNtBU_5panic11unwind_safe13RefUnwindSafeEL_EB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:544
+    _RINvNtCsjrHSEGnQ3l9_3std5panic12catch_unwindRDINtNtNtCsgEmfK2I1SDS_4core3ops8function2FnuEp6OutputlNtNtBP_6marker4SyncNtNtNtBP_5panic11unwind_safe13RefUnwindSafeEL_lEB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panic.rs:359
+    _RNCNvNtCsjrHSEGnQ3l9_3std2rt19lang_start_internal0B5_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:175
+    _RINvNvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwind7do_callNCNvNtB6_2rt19lang_start_internal0iEB6_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:581
+    _RINvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwindiNCNvNtB4_2rt19lang_start_internal0EB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:544
+    _RINvNtCsjrHSEGnQ3l9_3std5panic12catch_unwindNCNvNtB4_2rt19lang_start_internal0iEB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panic.rs:359
+    _RNvNtCsjrHSEGnQ3l9_3std2rt19lang_start_internal
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:171
+    std::rt::lang_start::h5771b3467ac67a7a
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/rt.rs:205
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    main
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+10000 temporary allocations of 10000 allocations in total (100.00%) from:
+    _RNvMs4_NtCslNYArtu3iFV_5alloc7raw_vecNtB5_11RawVecInner14grow_amortizedCsduwmD7cSIQq_5gimli
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    alloc::raw_vec::RawVecInner$LT$A$GT$::grow_one::hd18e5d56b3b7e962
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/raw_vec/mod.rs:491
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    alloc::raw_vec::RawVec$LT$T$C$A$GT$::grow_one::h2f55eccf3d6b7e20
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/raw_vec/mod.rs:188
+    alloc::vec::Vec$LT$T$C$A$GT$::push_mut::h32f36b7cd0a6f9a3
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/vec/mod.rs:1029
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    alloc::vec::Vec$LT$T$C$A$GT$::push::h434d93cdb544946e
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/vec/mod.rs:992
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    broken_app::algo::slow_dedup::h3bfb094e1a710cd0
+      at broken-app/src/algo.rs:14
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    profile_workload::main::h6d731ed102210901
+      at broken-app/src/bin/profile_workload.rs:20
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    core::ops::function::FnOnce::call_once::hfbfdabc8a6ada184
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ops/function.rs:250
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    std::sys::backtrace::__rust_begin_short_backtrace::ha691ec63b1c6f2e7
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/sys/backtrace.rs:166
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    std::rt::lang_start::_$u7b$$u7b$closure$u7d$$u7d$::hc223f18a5fc58463
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/rt.rs:206
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    _RNvXs0_NtNtNtCsgEmfK2I1SDS_4core3ops8function5implsRDINtB7_2FnuEp6OutputlNtNtBb_6marker4SyncNtNtNtBb_5panic11unwind_safe13RefUnwindSafeEL_INtB7_6FnOnceuE9call_onceCsjrHSEGnQ3l9_3std
+      at library/core/src/ops/function.rs:287
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    _RINvNvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwind7do_callRDINtNtNtCsgEmfK2I1SDS_4core3ops8function2FnuEp6OutputlNtNtB13_6marker4SyncNtNtNtB13_5panic11unwind_safe13RefUnwindSafeEL_lEB6_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:581
+    _RINvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwindlRDINtNtNtCsgEmfK2I1SDS_4core3ops8function2FnuEp6OutputlNtNtBU_6marker4SyncNtNtNtBU_5panic11unwind_safe13RefUnwindSafeEL_EB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:544
+    _RINvNtCsjrHSEGnQ3l9_3std5panic12catch_unwindRDINtNtNtCsgEmfK2I1SDS_4core3ops8function2FnuEp6OutputlNtNtBP_6marker4SyncNtNtNtBP_5panic11unwind_safe13RefUnwindSafeEL_lEB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panic.rs:359
+    _RNCNvNtCsjrHSEGnQ3l9_3std2rt19lang_start_internal0B5_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:175
+    _RINvNvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwind7do_callNCNvNtB6_2rt19lang_start_internal0iEB6_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:581
+    _RINvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwindiNCNvNtB4_2rt19lang_start_internal0EB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:544
+    _RINvNtCsjrHSEGnQ3l9_3std5panic12catch_unwindNCNvNtB4_2rt19lang_start_internal0iEB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panic.rs:359
+    _RNvNtCsjrHSEGnQ3l9_3std2rt19lang_start_internal
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:171
+    std::rt::lang_start::h5771b3467ac67a7a
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/rt.rs:205
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    main
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+10000 temporary allocations of 10000 allocations in total (100.00%) from:
+    _RNvMs4_NtCslNYArtu3iFV_5alloc7raw_vecNtB5_11RawVecInner14grow_amortizedCsduwmD7cSIQq_5gimli
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    alloc::raw_vec::RawVecInner$LT$A$GT$::grow_one::hd18e5d56b3b7e962
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/raw_vec/mod.rs:491
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    alloc::raw_vec::RawVec$LT$T$C$A$GT$::grow_one::h2f55eccf3d6b7e20
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/raw_vec/mod.rs:188
+    alloc::vec::Vec$LT$T$C$A$GT$::push_mut::h32f36b7cd0a6f9a3
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/vec/mod.rs:1029
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    alloc::vec::Vec$LT$T$C$A$GT$::push::h434d93cdb544946e
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/vec/mod.rs:992
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    broken_app::algo::slow_dedup::h3bfb094e1a710cd0
+      at broken-app/src/algo.rs:14
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    profile_workload::main::h6d731ed102210901
+      at broken-app/src/bin/profile_workload.rs:20
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    core::ops::function::FnOnce::call_once::hfbfdabc8a6ada184
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ops/function.rs:250
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    std::sys::backtrace::__rust_begin_short_backtrace::ha691ec63b1c6f2e7
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/sys/backtrace.rs:166
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    std::rt::lang_start::_$u7b$$u7b$closure$u7d$$u7d$::hc223f18a5fc58463
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/rt.rs:206
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    _RNvXs0_NtNtNtCsgEmfK2I1SDS_4core3ops8function5implsRDINtB7_2FnuEp6OutputlNtNtBb_6marker4SyncNtNtNtBb_5panic11unwind_safe13RefUnwindSafeEL_INtB7_6FnOnceuE9call_onceCsjrHSEGnQ3l9_3std
+      at library/core/src/ops/function.rs:287
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    _RINvNvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwind7do_callRDINtNtNtCsgEmfK2I1SDS_4core3ops8function2FnuEp6OutputlNtNtB13_6marker4SyncNtNtNtB13_5panic11unwind_safe13RefUnwindSafeEL_lEB6_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:581
+    _RINvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwindlRDINtNtNtCsgEmfK2I1SDS_4core3ops8function2FnuEp6OutputlNtNtBU_6marker4SyncNtNtNtBU_5panic11unwind_safe13RefUnwindSafeEL_EB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:544
+    _RINvNtCsjrHSEGnQ3l9_3std5panic12catch_unwindRDINtNtNtCsgEmfK2I1SDS_4core3ops8function2FnuEp6OutputlNtNtBP_6marker4SyncNtNtNtBP_5panic11unwind_safe13RefUnwindSafeEL_lEB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panic.rs:359
+    _RNCNvNtCsjrHSEGnQ3l9_3std2rt19lang_start_internal0B5_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:175
+    _RINvNvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwind7do_callNCNvNtB6_2rt19lang_start_internal0iEB6_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:581
+    _RINvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwindiNCNvNtB4_2rt19lang_start_internal0EB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:544
+    _RINvNtCsjrHSEGnQ3l9_3std5panic12catch_unwindNCNvNtB4_2rt19lang_start_internal0iEB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panic.rs:359
+    _RNvNtCsjrHSEGnQ3l9_3std2rt19lang_start_internal
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:171
+    std::rt::lang_start::h5771b3467ac67a7a
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/rt.rs:205
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    main
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+
+1 temporary allocations of 1 allocations in total (100.00%) from
+0x765aaa8b738e
+  in /lib/x86_64-linux-gnu/libstdc++.so.6
+1 temporary allocations of 1 allocations in total (100.00%) from:
+    call_init
+      at ./elf/dl-init.c:74
+      in /lib64/ld-linux-x86-64.so.2
+    _dl_init::call_init
+      at ./elf/dl-init.c:120
+      in /lib64/ld-linux-x86-64.so.2
+    _dl_init
+      at ./elf/./elf/dl-init.c:121
+    _dl_start_user
+      in /lib64/ld-linux-x86-64.so.2
+
+1 temporary allocations of 1 allocations in total (100.00%) from
+__GI___getdelim
+  at ./libio/iogetdelim.c:107
+  in /lib/x86_64-linux-gnu/libc.so.6
+1 temporary allocations of 1 allocations in total (100.00%) from:
+    __pthread_getattr_np
+      at ./nptl/pthread_getattr_np.c:122
+      in /lib/x86_64-linux-gnu/libc.so.6
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp15get_stack_start
+      at library/std/src/sys/pal/unix/stack_overflow.rs:372
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp19stack_start_aligned
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/stack_overflow.rs:389
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp24install_main_guard_linux
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/stack_overflow.rs:442
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp18install_main_guard
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/stack_overflow.rs:413
+    _RNvNtNtNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix14stack_overflow3imp4init
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/stack_overflow.rs:155
+    _RNvNtNtNtCsjrHSEGnQ3l9_3std3sys3pal4unix4init
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/mod.rs:41
+    _RNvNtCsjrHSEGnQ3l9_3std2rt4init
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:118
+    _RNCNvNtCsjrHSEGnQ3l9_3std2rt19lang_start_internal0B5_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:173
+    _RINvNvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwind7do_callNCNvNtB6_2rt19lang_start_internal0iEB6_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:581
+    _RINvNtCsjrHSEGnQ3l9_3std9panicking12catch_unwindiNCNvNtB4_2rt19lang_start_internal0EB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panicking.rs:544
+    _RINvNtCsjrHSEGnQ3l9_3std5panic12catch_unwindNCNvNtB4_2rt19lang_start_internal0iEB4_
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/panic.rs:359
+    _RNvNtCsjrHSEGnQ3l9_3std2rt19lang_start_internal
+      at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/rt.rs:171
+    std::rt::lang_start::h5771b3467ac67a7a
+      at /home/alex/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/rt.rs:205
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+    main
+      in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/release/profile_workload
+
+
+total runtime: 0.13s.
+calls to allocation functions: 60010 (458091/s)
+temporary memory allocations: 30002 (229022/s)
+peak heap memory consumption: 75.46K
+peak RSS (including heaptrack overhead): 4.85M
+total memory leaked: 544B
