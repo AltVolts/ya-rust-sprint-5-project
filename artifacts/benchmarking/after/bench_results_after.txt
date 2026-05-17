@@ -1,12 +1,12 @@
-test sum_even_broken ... bench:        7806 ns/iter (+/- 17)
+test sum_even_broken ... bench:        8569 ns/iter (+/- 43)
 
-test leak_buffer_broken ... bench:        2779 ns/iter (+/- 18)
+test leak_buffer_broken ... bench:        3030 ns/iter (+/- 14)
 
-test normalize_broken ... bench:        2505 ns/iter (+/- 54)
+test normalize_broken ... bench:        2715 ns/iter (+/- 18)
 
-test average_positive_broken ... bench:        3026 ns/iter (+/- 28)
+test average_positive_broken ... bench:        3281 ns/iter (+/- 7)
 
-test slow_fib_broken ... bench:     4023197 ns/iter (+/- 14391)
+test slow_fib_broken ... bench:          14 ns/iter (+/- 0)
 
-test slow_dedup_broken ... bench:    10215361 ns/iter (+/- 117195)
+test slow_dedup_broken ... bench:       15275 ns/iter (+/- 3172)
 

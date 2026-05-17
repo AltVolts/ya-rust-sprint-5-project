@@ -1,4 +1,5 @@
-    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.07s
+   Compiling broken-app v0.1.0 (/home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/broken-app)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.33s
      Running unittests src/lib.rs (target/miri/x86_64-unknown-linux-gnu/debug/deps/broken_app-1a24c247aa6ec68b)
 
 running 5 tests
@@ -8,7 +9,7 @@ test tests::regression_test_leak_buffer_correct_count ... ok
 test tests::regression_test_normalize ... ok
 test tests::regression_test_off_by_one_no_panic ... ok
 
-test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.09s
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.10s
 
      Running unittests src/bin/demo.rs (target/miri/x86_64-unknown-linux-gnu/debug/deps/demo-5df0480a4d4caab1)
 
@@ -33,7 +34,7 @@ test normalize_simple ... ok
 test sums_even_numbers ... ok
 test test_race_increment_correct_total ... ok
 
-test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.69s
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.58s
 
    Doc-tests broken_app
 

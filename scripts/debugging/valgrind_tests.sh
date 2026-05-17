@@ -7,7 +7,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 LOGDIR="${1:-$(dirname "$0")/../../artifacts/debugging}"
 mkdir -p "$LOGDIR"
 
-cargo test -p broken-app --tests --no-run
+cargo test -p broken-app --no-run
 
 # Ищем самый свежий бинарник, исключая файлы .d
 BIN=$(ls -t target/debug/deps/broken_app-* 2>/dev/null | grep -v '\.d$' | head -1)
