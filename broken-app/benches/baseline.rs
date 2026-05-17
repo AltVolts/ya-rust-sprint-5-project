@@ -1,11 +1,16 @@
-use broken_app::{algo::{slow_dedup, slow_fib}, average_positive, leak_buffer, normalize, sum_even};
-use std::{collections::HashMap, time::{Duration, Instant}};
+use broken_app::{
+    algo::{slow_dedup, slow_fib},
+    average_positive, leak_buffer, normalize, sum_even,
+};
+use std::{
+    collections::HashMap,
+    time::{Duration, Instant},
+};
 
 fn time_it(mut f: impl FnMut()) -> Duration {
     let start = Instant::now();
     f();
     start.elapsed()
-
 }
 
 fn main() {
@@ -20,35 +25,32 @@ fn main() {
 
     let runs = 3;
     for _ in 0..runs {
-        timings
-            .entry("sum_even")
-            .or_default()
-            .push(time_it(|| { let _ = sum_even(&data); }));
+        timings.entry("sum_even").or_default().push(time_it(|| {
+            let _ = sum_even(&data);
+        }));
 
-        timings
-            .entry("leak_buffer")
-            .or_default()
-            .push(time_it(|| { let _ = leak_buffer(&leak_data); }));
+        timings.entry("leak_buffer").or_default().push(time_it(|| {
+            let _ = leak_buffer(&leak_data);
+        }));
 
-        timings
-            .entry("normalize")
-            .or_default()
-            .push(time_it(|| { let _ = normalize(&text); }));
+        timings.entry("normalize").or_default().push(time_it(|| {
+            let _ = normalize(&text);
+        }));
 
         timings
             .entry("average_positive")
             .or_default()
-            .push(time_it(|| { let _ = average_positive(&avg_nums); }));
+            .push(time_it(|| {
+                let _ = average_positive(&avg_nums);
+            }));
 
-        timings
-            .entry("slow_fib")
-            .or_default()
-            .push(time_it(|| { let _ = slow_fib(fib_n); }));
+        timings.entry("slow_fib").or_default().push(time_it(|| {
+            let _ = slow_fib(fib_n);
+        }));
 
-        timings
-            .entry("slow_dedup")
-            .or_default()
-            .push(time_it(|| { let _ = slow_dedup(&dedup_data); }));
+        timings.entry("slow_dedup").or_default().push(time_it(|| {
+            let _ = slow_dedup(&dedup_data);
+        }));
     }
 
     let mut averages: Vec<(&str, f64)> = timings
@@ -63,12 +65,11 @@ fn main() {
     averages.sort_by(|a, b| b.1.partial_cmp(&a.1).unwrap());
 
     println!("{:<25} {:>12}", "Function", "Avg time (µs)");
-        println!("{}", "-".repeat(40));
-        for (name, avg_ns) in &averages {
-            let avg_us = avg_ns / 1_000.0;
-            println!("{:<25} {:>10.2}", name, avg_us);
-        }
-    
+    println!("{}", "-".repeat(40));
+    for (name, avg_ns) in &averages {
+        let avg_us = avg_ns / 1_000.0;
+        println!("{:<25} {:>10.2}", name, avg_us);
+    }
 
     let total_ns: f64 = averages.iter().map(|(_, t)| t).sum();
     println!("\nShare of total time:");

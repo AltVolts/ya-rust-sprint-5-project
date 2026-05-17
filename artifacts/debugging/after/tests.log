@@ -1,10 +1,10 @@
    Compiling broken-app v0.1.0 (/home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/broken-app)
-    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.40s
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.38s
      Running unittests src/lib.rs (target/debug/deps/broken_app-2d89365d1357f924)
 
 running 5 tests
-test tests::regression_test_average_positive_positive_absence ... ok
 test tests::regression_test_empty_slice ... ok
+test tests::regression_test_average_positive_positive_absence ... ok
 test tests::regression_test_leak_buffer_correct_count ... ok
 test tests::regression_test_normalize ... ok
 test tests::regression_test_off_by_one_no_panic ... ok

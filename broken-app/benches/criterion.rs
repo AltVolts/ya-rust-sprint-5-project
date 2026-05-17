@@ -1,4 +1,4 @@
-use broken_app::{algo, sum_even, leak_buffer, normalize, average_positive};
+use broken_app::{algo, average_positive, leak_buffer, normalize, sum_even};
 use criterion::{BatchSize, Criterion, criterion_group, criterion_main};
 
 fn bench_sum_even(c: &mut Criterion) {
@@ -18,7 +18,9 @@ fn bench_normalize(c: &mut Criterion) {
 
 fn bench_average_positive(c: &mut Criterion) {
     let nums: Vec<i64> = (-10..10_000).collect();
-    c.bench_function("average_positive_broken", |b| b.iter(|| average_positive(&nums)));
+    c.bench_function("average_positive_broken", |b| {
+        b.iter(|| average_positive(&nums))
+    });
 }
 
 fn bench_fib(c: &mut Criterion) {
