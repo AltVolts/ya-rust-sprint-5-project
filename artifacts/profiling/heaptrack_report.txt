@@ -672,7 +672,7 @@ __pthread_attr_extension
 
 PEAK MEMORY CONSUMERS
 73.73K peak memory consumed over 1 calls from
-0x76b2c72b738e
+0x72b9f9eb738e
   in /lib/x86_64-linux-gnu/libstdc++.so.6
 73.73K consumed over 1 calls from:
     call_init
@@ -1000,7 +1000,7 @@ alloc::raw_vec::RawVecInner$LT$A$GT$::finish_grow::h839c16b571591257
       in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/profiling/profile_workload
 
 1 temporary allocations of 1 allocations in total (100.00%) from
-0x76b2c72b738e
+0x72b9f9eb738e
   in /lib/x86_64-linux-gnu/libstdc++.so.6
 1 temporary allocations of 1 allocations in total (100.00%) from:
     call_init
@@ -1051,9 +1051,9 @@ __GI___getdelim
       in /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/target/profiling/profile_workload
 
 
-total runtime: 0.16s.
-calls to allocation functions: 300010 (1863416/s)
-temporary memory allocations: 150002 (931689/s)
+total runtime: 0.14s.
+calls to allocation functions: 300010 (2112746/s)
+temporary memory allocations: 150002 (1056352/s)
 peak heap memory consumption: 75.46K
-peak RSS (including heaptrack overhead): 4.59M
+peak RSS (including heaptrack overhead): 4.72M
 total memory leaked: 544B

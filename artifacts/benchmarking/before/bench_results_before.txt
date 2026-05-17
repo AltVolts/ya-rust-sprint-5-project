@@ -1,0 +1,12 @@
+test sum_even_broken ... bench:        7888 ns/iter (+/- 31)
+
+test leak_buffer_broken ... bench:        2781 ns/iter (+/- 14)
+
+test normalize_broken ... bench:        2478 ns/iter (+/- 27)
+
+test average_positive_broken ... bench:        3222 ns/iter (+/- 44)
+
+test slow_fib_broken ... bench:     4023556 ns/iter (+/- 13399)
+
+test slow_dedup_broken ... bench:    10195102 ns/iter (+/- 78415)
+

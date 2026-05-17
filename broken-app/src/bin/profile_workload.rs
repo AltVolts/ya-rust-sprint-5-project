@@ -1,7 +1,7 @@
 use broken_app::{algo, sum_even, leak_buffer, normalize};
 
 fn main() {
-    let _ = algo::slow_fib(30);
+    let _ = algo::slow_fib(31);
 
     let iterations = 50000;
     for _ in 0..iterations {

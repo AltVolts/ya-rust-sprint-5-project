@@ -1,7 +1,7 @@
 --------------------------------------------------------------------------------
 Command:            target/profiling/profile_workload
 Massif arguments:   --massif-out-file=/home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/scripts/../artifacts/profiling/massif.out.%p --time-unit=B --detailed-freq=1
-ms_print arguments: /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/scripts/../artifacts/profiling/massif.out.30613
+ms_print arguments: /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/scripts/../artifacts/profiling/massif.out.30613 /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/scripts/../artifacts/profiling/massif.out.38041 /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/scripts/../artifacts/profiling/massif.out.38239 /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/scripts/../artifacts/profiling/massif.out.38430 /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/scripts/../artifacts/profiling/massif.out.38652 /home/alex/RustProjects/YaRust/sprint5/ya-rust-spint-5-project/scripts/../artifacts/profiling/massif.out.38963
 --------------------------------------------------------------------------------
 
 
